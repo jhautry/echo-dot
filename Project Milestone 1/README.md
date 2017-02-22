@@ -1,6 +1,6 @@
 # OUTLINE/SCRATCH PAPER -- FULL VERSION MUST BE TOP-LEVEL FOR FULL POINTS
 
-View in edit mode 
+View in edit mode to see more line breaks
 
 # Executive Project Summary (NOT LONGER THAN 1 PAGE, NOT TOO SHORT)
 ##### Clearly identifies the context of the problem addressed by your project. Answers the question - Why is this an area of interest?
