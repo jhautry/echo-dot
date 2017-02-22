@@ -3,7 +3,5 @@ This is the team page for CYBR4580.  We are a team pentesting an Amazon Echo Dot
 
 # Team Members
 James Autry
-
 Tim Gekas
-
 Matthew Sutton
