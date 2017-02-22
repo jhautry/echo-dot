@@ -27,7 +27,7 @@ Worthy because new firmware is hard to load (locked out of debugger) - very litt
 
 # Proposed Project Timeline
 ##### Specify large tasks to be completed, estimates time of completion, and arranges those tasks chronologically over the project lifespan.
-Gnatt chart goes here.
+### Gnatt chart goes here.
 
 Ideas for Gnatt chart:
 
@@ -43,15 +43,45 @@ Testing Host-based Vulnerabilities | 3-4 Weeks
 Reviewing for Milestone 3 | 1 Week
 
 # Project-oriented Risk List
+##### Issues with skillsets, technology, team member availability, etc, may arise as the project goes forward.
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
-|Some risk (40) | 8 | 5 | Some description  |
+|Unable to install custom firmware (27) | 3 | 9 | Firmware is locked: no known access to debugger (sdb) and no SD card slot  |
+|Unable to find potential network vulnerability (18) | 3 | 6 | There may be no network-based vulnerabilities | 
+|Unable to find potential vulnerability in Skills (16) ( | 2 | 8 | The custom coding skills API may have no vulnerabilites |
+|Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware, or root method, could brick the Echo Dot |
+
+Possibles to add:
+Failure to code skills
+Failure to understand Android firmware and debugging
+Anyone that will be unavailable for a timeframe (work, vacation, or something)
 
 # Application Requirements
+### 5 most important user stories
+As a **user/role**, I want to **goal** so I can **rationale**. 
+Acceptance criteria: hey
+As a **user/role**, I want to **goal** so I can **rationale**. 
+Acceptance criteria: hey
+As a **user/role**, I want to **goal** so I can **rationale**. 
+Acceptance criteria: hey
+As a **user/role**, I want to **goal** so I can **rationale**. 
+Acceptance criteria: hey
+As a **user/role**, I want to **goal** so I can **rationale**. 
+Acceptance criteria: hey
+
+### Insert Use/Misuse Case Diagram Here
 
 # Resources/Technology Needed
-We need another Echo Dot v2 and an Alexa Voice Remote
+##### Clearly identify the technologies, products, and languages involved in your project. Include a table that identifies which team member will investigate each needed resource. 
+|Resource  | Dr. Hale needed? | Investigating Team member | Description |
+|-------------------|---------|---------------------------|-------------|
+|Another Echo Dot v2| Possibly | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
+|Alexa Voice Remote| Possibly | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
+|Android Debuggers| No | Matt | Look into SDB |
+|Android Rooting| No | Matt | Look further into rooting the Echo Dot v2|
+|Some way to setup airgapped testing lab| No | James | Setup a dedicated area for testing |
+|Skills coding | No | Tim | Look into ways skills could be used to penetrate Echo Dot v2 |
 
 # First Sprint Plan
 https://trello.com/b/lrGlLkCc/echo-dot-project-main
