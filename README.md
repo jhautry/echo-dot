@@ -28,6 +28,7 @@ Worthy because new firmware is hard to load (locked out of debugger) - very litt
 ## ****Gnatt chart goes here.****
 
 Ideas for Gnatt chart:
+
 Item | Timeframe
 ------------ | -------------
 Milestone 2 | TBA
@@ -46,7 +47,7 @@ Reviewing for Milestone 3 | 1 Week
 |-------------------|------------|------------|-------------|
 |Unable to install custom firmware (27) | 3 | 9 | Firmware is locked: no known access to debugger (sdb) and no SD card slot  |
 |Unable to find potential network vulnerability (18) | 3 | 6 | There may be no network-based vulnerabilities | 
-|Unable to find potential vulnerability in Skills (16) ( | 2 | 8 | The custom coding skills API may have no vulnerabilites |
+|Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilites |
 |Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware, or root method, could brick the Echo Dot |
 
 Possibles to add:
@@ -58,12 +59,16 @@ Anyone that will be unavailable for a timeframe (work, vacation, or something)
 ### 5 most important user stories
 As a **user/role**, I want to **goal** so I can **rationale**. 
 Acceptance criteria: hey
+
 As a **user/role**, I want to **goal** so I can **rationale**. 
 Acceptance criteria: hey
+
 As a **user/role**, I want to **goal** so I can **rationale**. 
 Acceptance criteria: hey
+
 As a **user/role**, I want to **goal** so I can **rationale**. 
 Acceptance criteria: hey
+
 As a **user/role**, I want to **goal** so I can **rationale**. 
 Acceptance criteria: hey
 
