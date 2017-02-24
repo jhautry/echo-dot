@@ -72,7 +72,8 @@ Acceptance criteria: hey
 As a **user/role**, I want to **goal** so I can **rationale**. 
 Acceptance criteria: hey
 
-## ****Insert Use/Misuse Case Diagram Here****
+# Use/Misuse Case Diagram
+![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
 
 # Resources/Technology Needed
 ##### Clearly identify the technologies, products, and languages involved in your project. Include a table that identifies which team member will investigate each needed resource. 
