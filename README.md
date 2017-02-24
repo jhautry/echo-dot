@@ -25,9 +25,9 @@ Worthy because new firmware is hard to load (locked out of debugger) - very litt
 
 # Proposed Project Timeline
 ##### Specify large tasks to be completed, estimates time of completion, and arranges those tasks chronologically over the project lifespan.
-## ****Gnatt chart goes here.****
+## ****Gantt chart goes here.****
 
-Ideas for Gnatt chart:
+Ideas for Gantt chart:
 
 Item | Timeframe
 ------------ | -------------
