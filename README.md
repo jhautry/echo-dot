@@ -52,20 +52,15 @@ Anyone that will be unavailable for a timeframe (work, vacation, or something)
 
 # Application Requirements
 ### 5 most important user stories
-As a **user/role**, I want to **goal** so I can **rationale**. 
-Acceptance criteria: hey
+As a normal user, I want to be able to give a request to Alexa so that I can get a response, without anyone else hearing me.
 
-As a **user/role**, I want to **goal** so I can **rationale**. 
-Acceptance criteria: hey
+As a normal user, I want to leave my Echo Dot alone without any requests being sent.
 
-As a **user/role**, I want to **goal** so I can **rationale**. 
-Acceptance criteria: hey
+As a normal user, I want to download a useful skill that I can take advantage of.
 
-As a **user/role**, I want to **goal** so I can **rationale**. 
-Acceptance criteria: hey
+As a developer, I want to be able to make a skill that users can find useful.
 
-As a **user/role**, I want to **goal** so I can **rationale**. 
-Acceptance criteria: hey
+As an Amazon employee, I want to be able to put out a firmware update to the Echo Dot without someone else being able to overwrite it maliciously.
 
 # Use/Misuse Case Diagram
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
