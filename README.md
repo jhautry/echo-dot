@@ -44,14 +44,10 @@ Reviewing for Milestone 3 | 1 Week
 |Unable to find potential network vulnerability (18) | 3 | 6 | There may be no network-based vulnerabilities | 
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilites |
 |Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware, or root method, could brick the Echo Dot |
+|Lack of team availability (23) | 6 | 4 | The custom coding skills API may have no vulnerabilites |
 
-Possibles to add:
-Failure to code skills
-Failure to understand Android firmware and debugging
-Anyone that will be unavailable for a timeframe (work, vacation, or something)
+# User Stories
 
-# Application Requirements
-### 5 most important user stories
 As a normal user, I want to be able to give a request to Alexa so that I can get a response, without anyone else hearing me.
 
 As a normal user, I want to leave my Echo Dot alone without any requests being sent.
@@ -66,11 +62,10 @@ As an Amazon employee, I want to be able to put out a firmware update to the Ech
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
 
 # Resources/Technology Needed
-##### Clearly identify the technologies, products, and languages involved in your project. Include a table that identifies which team member will investigate each needed resource. 
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
 |Another Echo Dot v2| Possibly | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
-|Alexa Voice Remote| Possibly | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
+|Alexa Voice Remote| Yes | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
 |Android Debuggers| No | Matt | Look into SDB |
 |Android Rooting| No | Matt | Look further into rooting the Echo Dot v2|
 |Some way to setup airgapped testing lab| No | James | Setup a dedicated area for testing |
