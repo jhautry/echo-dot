@@ -1,14 +1,13 @@
 # Executive Project Summary
 ### Summary and Merit of Project
 Intelligent, voice-controlled systems are a new and emerging technology now being found in many homes.  
-In 2014, Amazon launched their new voice controlled assistant called Alexa.  It has been integrated into the Amazon Echo and further into the Amazon Echo Dot series.  These are devices which sit in a user's home, constantly listening for the user to make a request that Alexa could fulfill.  Examples of requests that can be fulfilled are playing music, giving information on the weather, or controlling another Internet-Of-Things device in the user's home.
+In 2014, Amazon launched their new voice controlled assistant called Alexa.  It has been integrated into the Amazon Echo and into the Amazon Echo Dot series.  These are devices which sit in a user's home, constantly listening for the user to make a request that Alexa could fulfill.  Examples of requests that can be fulfilled are playing music, giving information on the weather, or controlling another Internet-Of-Things device in the user's home.
 
 Our primary objective is to execute a full-scope pentest into the Amazon Echo Dot (2nd Generation).  Specifically, this refers to compromizing the security of the device itself - not the security of Alexa, whose implementation is stored on official Amazon servers.  However, there are devices that are made to interface with the Echo Dot (namely, the Alexa Voice Remote) that we will also be inspecting to see if they can be used to compromize the Echo Dot.
 
 Voice-controlled AI devices such as the Echo Dot are a newly emerging technology, and there is still a lot of research and testing that needs to be done before these Internet-of-Things devices can be said to have been properly vetted for widespread use.  In pentesting the Echo Dot, we hope to accomplish one of two ends: either improve the assurance that these devices are secure enough for widespread use, or improve the security of the device so that it can eventually be suitable for widespread use.
 
 ### Goals and objectives
-##### Efforts are clearly tied to addressing the identified problem. Goals are stated at a high level and are free of technical jargon or uncessary detail.
 * Gain valuable experience with pentesting as a team
 * Plan a thourough investigation into the security of the Echo Dot
 * Test the following general compromization strategies:
