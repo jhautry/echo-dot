@@ -43,7 +43,7 @@ Reviewing for Milestone 3 | 1 Week
 |Unable to find potential network vulnerability (18) | 3 | 6 | There may be no network-based vulnerabilities | 
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilites |
 |Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware, or root method, could brick the Echo Dot |
-|Lack of team availability (23) | 6 | 4 | The custom coding skills API may have no vulnerabilites |
+|Lack of team availability (24) | 6 | 4 | The custom coding skills API may have no vulnerabilites |
 
 # User Stories
 
