@@ -66,6 +66,7 @@ As an Amazon employee, I want to be able to put out a firmware update to the Ech
 |-------------------|---------|---------------------------|-------------|
 |Another Echo Dot v2| Possibly | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
 |Alexa Voice Remote| Yes | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
+|WiFi Pineapple| No | James | For testing man-in-the-middle attack possibilities |
 |Android Debuggers| No | Matt | Look into SDB |
 |Android Rooting| No | Matt | Look further into rooting the Echo Dot v2|
 |Some way to setup airgapped testing lab| No | James | Setup a dedicated area for testing |
