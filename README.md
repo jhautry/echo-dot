@@ -36,16 +36,15 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 |Milestone 3 | TBA |  |  |
 |Presentations | TBA |  |  |
 
-
 # Project-oriented Risk List
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
 |Unable to install custom firmware (27) | 3 | 9 | Firmware is locked: no known access to debugger (sdb) and no SD card slot  |
+|Lack of team availability (24) | 6 | 4 | There is a possibility that there will be scheduling issues down the road which could lead to a loss of productivity |
+|Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware install, or root method, could brick the Echo Dot |
 |Unable to find potential network vulnerability (18) | 3 | 6 | There may be no network-based vulnerabilities | 
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilites |
-|Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware install, or root method, could brick the Echo Dot |
-|Lack of team availability (24) | 6 | 4 | There is a possibility that there will be scheduling issues down the road which could lead to a loss of productivity |
 
 # User Stories
 
@@ -68,7 +67,7 @@ As an Amazon employee, I want to be able to put out a firmware update to the Ech
 |Another Echo Dot v2| Possibly | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
 |Alexa Voice Remote| Yes | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
 |WiFi Pineapple| Yes | James | For testing man-in-the-middle attack possibilities |
-|Android Debuggers| No | Matt | Look into SDB |
+|Android Debuggers| No | Matt | Look into Android debuggers |
 |Android Rooting| No | Matt | Look further into rooting the Echo Dot v2|
 |Some way to setup airgapped testing lab| No | James | Setup a dedicated area for testing |
 |Skills coding | No | Tim | Look into ways skills could be used to penetrate Echo Dot v2 |
