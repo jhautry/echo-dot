@@ -20,19 +20,22 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 # Proposed Project Timeline
 ##### Specify large tasks to be completed, estimates time of completion, and arranges those tasks chronologically over the project lifespan.
 ## ****Gantt chart goes here.****
+|Item | Start | End | Duration
+|------------ | -------------|-------------|-------------|
+|Planning | 3/2 | 3/9 | 1 Week|
+|Continued Research | 3/2 | 3/23 | 3 Weeks|
+|Acquire Additional Hardware | 3/2 | 3/16 | 2 Weeks|
+|Diagram Echo Dot Hardware | 3/2 | 3/16 |  1 Week|
+|Pentest Network Vulnerabilities | 3/9 | 4/13 | 5 Weeks|
+|Pentest Firmware Vulnerabilities | 3/9 | 4/13 | 5 Weeks|
+|Find Vulnerability in Skills API | 3/9 | 4/13 | 5 Weeks|
+|Find Vulnerability in Alexa Remote | 3/16 | 4/13 | 4 Weeks|
+|Write Report | 4/6 | 4/27 | 3 Weeks|
+|Create Presentation Slides | 4/6 | 4/20 | 3 Weeks|
+|Milestone 2 | TBA |  |  |
+|Milestone 3 | TBA |  |  |
+|Presentations | TBA |  |  |
 
-Ideas for Gantt chart:
-
-Item | Timeframe
------------- | -------------
-Milestone 2 | TBA
-Milestone 3 | TBA
-Construct Echo Dot usage diagrams | 1 Week
-Planning | 1 Week
-Acquiring Additional Hardware | 3 Weeks
-Testing Network-based Vulnerabilities | 3-4 Weeks
-Testing Host-based Vulnerabilities | 3-4 Weeks
-Reviewing for Milestone 3 | 1 Week
 
 # Project-oriented Risk List
 ##### Issues with skillsets, technology, team member availability, etc, may arise as the project goes forward.
