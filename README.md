@@ -18,8 +18,8 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 * Provide a comprehensive writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Proposed Project Timeline
-##### Specify large tasks to be completed, estimates time of completion, and arranges those tasks chronologically over the project lifespan.
-## ****Gantt chart goes here.****
+![Project Gantt Chart](/Echo Dot Project Timeline v2.png)
+
 |Item | Start | End | Duration
 |------------ | -------------|-------------|-------------|
 |Planning | 3/2 | 3/9 | 1 Week|
@@ -38,7 +38,6 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 
 
 # Project-oriented Risk List
-##### Issues with skillsets, technology, team member availability, etc, may arise as the project goes forward.
 
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
@@ -78,6 +77,6 @@ As an Amazon employee, I want to be able to put out a firmware update to the Ech
 https://trello.com/b/lrGlLkCc/echo-dot-project-main
 
 # Team Members
-* James Autry
-* Tim Gekas
-* Matthew Sutton
+* James Autry - jhautry
+* Tim Gekas - tgekas
+* Matthew Sutton - nfiniteecho
