@@ -20,10 +20,12 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Proposed Project Timeline
-Last updated: 3/9/2017 - Please see added Milestone 2 Requirements
+Timeline last updated: 3/9/2017
 
+### Gantt Chart
 ![Project Gantt Chart](/Echo Dot Project Timeline 3-9.png)
 
+### Tabular Project Timeline
 |Item | Start | End | Duration
 |------------ | -------------|-------------|-------------|
 |Planning | 3/2 | 3/9 | 1 Week|
@@ -36,14 +38,15 @@ Last updated: 3/9/2017 - Please see added Milestone 2 Requirements
 |*Pentest Firmware Vulnerabilities | 3/23 | 4/13 | 3 Weeks|
 |*Pentest Alexa Remote | 3/23 | 4/13 | 3 Weeks|
 | **M2** Develop User Story Realizations | 3/23 | 4/3 | 11 Days|
+| **M2** Develop Milestone 3 Kanban Board | 3/23 | 4/3 | 11 Days|
+| **M2** Create Presentation Slides | 3/23 | 4/6 | 2 Weeks|
 |**Milestone 2 Due** | 4/3 | 4/3 | **DUE** |
+|**Milestone 2 Presentations** | 4/6 | 4/6 | **DUE** |
 |Write Final Report | 4/6 | 4/27 | 3 Weeks|
-|Create Presentation Slides | 4/6 | 4/20 | 2 Weeks|
-|Milestone 3 | TBA |  |  |
-|Presentations | TBA |  |  |
+|Milestone 3 Due | TBA |  |  |
+|Final Presentations | TBA |  |  |
 
 # Project-oriented Risk List
-
 |Risk name (value)  | Impact     | Likelihood | Description |
 |-------------------|------------|------------|-------------|
 |Unable to install custom firmware (27) | 3 | 9 | Firmware is locked: no known access to debugger (sdb) and no SD card slot  |
@@ -53,7 +56,6 @@ Last updated: 3/9/2017 - Please see added Milestone 2 Requirements
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilities |
 
 # User Stories
-
 ### 1) As a *normal user*, the main action I will be conducting is *giving verbal requests to Alexa* so I can *have her automate tasks for me like a personal assistant*.
 
 Acceptance Criteria:
