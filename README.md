@@ -1,19 +1,19 @@
 # Executive Project Summary
 ### Summary and Merit of Project
 Intelligent, voice-controlled systems are a new and emerging technology now being found in many homes.  
-In 2014, Amazon launched their new voice controlled assistant called Alexa.  It has been integrated into the Amazon Echo and into the Amazon Echo Dot series.  These are devices which sit in a user's home, constantly listening for the user to make a request that Alexa could fulfill.  Examples of requests that can be fulfilled are playing music, giving information on the weather, or controlling another Internet-Of-Things device in the user's home.
+In 2014, Amazon launched their new voice controlled assistant called Alexa.  It has been integrated into the Amazon Echo and into the Amazon Echo Dot series.  These are devices which sit in a user's home, constantly listening for the user to make a request that Alexa could fulfill.  Examples of requests that can be fulfilled are playing music, giving information on the weather, or controlling another Internet of Things (IoT) device in the user's home.
 
 Our primary objective is to execute a full-scope pentest into the Amazon Echo Dot (2nd Generation).  Specifically, this refers to compromising the security of the device itself - not the security of Alexa, whose implementation is stored on official Amazon servers.  However, there are devices that are made to interface with the Echo Dot (namely, the Alexa Voice Remote) that we will also be inspecting to see if they can be used to compromise the Echo Dot.
 
-Voice-controlled AI devices such as the Echo Dot are a newly emerging technology, and there is still a lot of research and testing that needs to be done before these Internet-of-Things devices can be said to have been properly vetted for widespread use.  In pentesting the Echo Dot, we hope to accomplish one of two ends: either improve the assurance that these devices are secure enough for widespread use, or improve the security of the device so that it can eventually be suitable for widespread use.
+Voice-controlled AI devices such as the Echo Dot are a newly emerging technology, and there is still a lot of research and testing that needs to be done before these IoT devices can be said to have been properly vetted for widespread use.  In pentesting the Echo Dot, we hope to accomplish one of two ends: either improve the assurance that these devices are secure enough for widespread use, or improve the security of the device so that it can eventually be suitable for widespread use.
 
 ### Goals and objectives
-* Gain valuable experience with pentesting as a team
+* Gain valuable experience pentesting as a team
 * Plan a thorough investigation into the security of the Echo Dot
-* Test the following general comptonization strategies:
-  * Intercept Echo Dot connection to Wi-Fi to execute Man-in-the-Middle based attacks
-  * Overwrite firmware with potentially malicious version
-  * Spoof signal from Alexa Voice Remote
+* Test the following strategies:
+  * Intercept the Echo Dot's Wi-Fi communications and execute Man-in-the-Middle based attacks
+  * Attempt to be the first known group to root an Echo Dot v2 so we can develop a proof-of-concept firmware exploit
+  * Spoof a signal from an Alexa Voice Remote
   * Find vulnerability that could lead to compromise of the Echo Dot through the Skill API
 * Provide a comprehensive writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
@@ -60,7 +60,7 @@ Acceptance Criteria:
 
 Acceptance Criteria:
 * Pentest the default Echo Dot features for vulnerabilities.
-* Pentest the Echo Dot's Internet of Things (IoT) capabilities.
+* Pentest the Echo Dot's IoT capabilities.
 * Identify and outline any user credentials stored on the Echo Dot.
 * Determine if identified user credentials are stored securely (i.e. encrypted).
 * Determine if confidential network traffic to and from the Echo Dot is transmitted securely  (i.e. encrypted).
