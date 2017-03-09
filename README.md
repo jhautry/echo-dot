@@ -47,16 +47,26 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilites |
 
 # User Stories
+1. As a **normal user**, I want to **give verbal requests to Alexa** (play music, order a pizza, voice control my smart-home, request an Uber, etc.) so I can **have her automate tasks for me like a personal assistant**.
+Acceptance Criteria:
+* Obtain a deep understanding of the Echo Dot's inner workings to identify Alexa's basic hardware and software routines.
+* Pentest Alexa's features to test for bugs and vulnerabilities. Some specifics for this user story:
+  * Determine if there is another hidden, unsecure method of communication with the Echo Dot that does not require a user's local presence (such as the Bluetooth Alexa remote).
+  * Determine if a voice sample can be sent digitally over the network to operate Alexa.
+  * Determine if network-based replay attacks can be used to conduct unauthorized tasks.
+  
+2. As a **normal user**, I want to **feel confident that the Echo Dot is secure** so I can **trust it to safely handle the security of my house and online accounts**.
+Acceptance Criteria:
+* A comprehensive overview of the information 
 
-As a normal user, I want to be able to give a request to Alexa so that I can get a response, without anyone else hearing me.
+3. As a **normal user**, I want to **download and install a useful Alexa Skill** to my Echo Dot so I can **add new features over time**.
+Acceptance Criteria:
 
-As a normal user, I want to leave my Echo Dot alone without any requests being sent.
+4. As a **developer**, I want to **be able to create an Alexa Skill** that users will find useful so they can **improve their Echo Dot functionality**.
+Acceptance Criteria:
 
-As a normal user, I want to download a useful skill that I can take advantage of.
-
-As a developer, I want to be able to make a skill that users can find useful.
-
-As an Amazon employee, I want to be able to put out a firmware update to the Echo Dot without someone else being able to overwrite it maliciously.
+5. As an **Amazon employee**, I want to **ensure the Echo Dot has no critical vulnerabilities** so **malicious users cannot exploit the product and use it for nefarious purposes**.
+Acceptance Criteria:
 
 # Use/Misuse Case Diagram
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
