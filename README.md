@@ -107,6 +107,11 @@ Acceptance Criteria:
 
 
 # Use/Misuse Case Diagram
+
+### Version 1
+![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
+
+### Version 2
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
 
 # Resources/Technology Needed
