@@ -48,7 +48,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 
 # User Stories
 ---
-### 1) As a *normal user*, the main action I will be conducting is **giving verbal requests to Alexa** so I can **have her automate tasks for me like a personal assistant**.
+### 1) As a *normal user*, the main action I will be conducting is *giving verbal requests to Alexa* so I can *have her automate tasks for me like a personal assistant*.
 
 Acceptance Criteria:
 * Obtain a fundamental understanding of the hardware and software routines used by the Echo Dot and Alexa.
@@ -56,7 +56,7 @@ Acceptance Criteria:
 
 ---
 
-### 2) As a **normal user**, I want to **be confident that my Echo Dot is secure** so I can **trust it to administer the security of my home** and **maintain confidentiality of my personal information**.
+### 2) As a *normal user*, I want to *be confident that my Echo Dot is secure* so I can *trust it to administer the security of my home* and *maintain confidentiality of my personal information*.
 
 Acceptance Criteria:
 * Pentest the default Echo Dot features for vulnerabilities.
@@ -69,7 +69,7 @@ Acceptance Criteria:
 
 ---
 
-### 3) As a **normal user**, I want to **download and install an Alexa Skill** to my Echo Dot so I can **add new features over time**.
+### 3) As a *normal user*, I want to *download and install an Alexa Skill* to my Echo Dot so I can *add new features over time*.
 
 Acceptance Criteria:
 * Pentest the Alexa Skill download system.
@@ -78,7 +78,7 @@ Acceptance Criteria:
   
 ---
 
-### 4) As a **developer**, I want to **be able to create an Alexa Skill** that users will find useful so they can **improve their Echo Dot functionality**.
+### 4) As a *developer*, I want to *be able to create an Alexa Skill* that users will find useful so they can *improve their Echo Dot functionality*.
 
 Acceptance Criteria:
 * Determine if the latest version of the Alexa Skills API can be used to program a malicious Skill.
@@ -88,7 +88,7 @@ Acceptance Criteria:
 
 ---
 
-### 5) As an **Amazon employee**, I want to **ensure the Echo Dot has no critical firmware update vulnerabilities** so that **malicious users cannot remotely flash their own firmware onto unauthorized Echo Dots**.
+### 5) As an *Amazon employee*, I want to *ensure the Echo Dot has no critical firmware update vulnerabilities* so that *malicious users cannot remotely flash their own firmware onto unauthorized Echo Dots*.
 
 Acceptance Criteria:
 * Pentest the firmware update system.
@@ -96,6 +96,7 @@ Acceptance Criteria:
 * Attempt to root the Echo Dot by unlocking the bootloader 
   
 ---
+
 
 # Use/Misuse Case Diagram
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
