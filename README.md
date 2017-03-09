@@ -48,7 +48,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 
 # User Stories
 ---
-### 1) As a **normal user**, the main action I will be conducting is **giving verbal requests to Alexa** so I can **have her automate tasks for me like a personal assistant**.
+### 1) As a *normal user*, the main action I will be conducting is **giving verbal requests to Alexa** so I can **have her automate tasks for me like a personal assistant**.
 
 Acceptance Criteria:
 * Obtain a fundamental understanding of the hardware and software routines used by the Echo Dot and Alexa.
@@ -82,13 +82,13 @@ Acceptance Criteria:
 
 Acceptance Criteria:
 * Determine if the latest version of the Alexa Skills API can be used to program a malicious Skill.
+* If there exists a potential Skills API vulnerability, attempt to provide a proof-of-concept for the exploit.
 * Research and determine if any malicious Alexa Skills have been developed successfully.
 * Research programming capabilities that could be added to future versions of the Skills API and identify their potential vulnerabilities.
-* If there exists a potential Skills API vulnerability, attempt to provide a proof-of-concept for the exploit.
 
 ---
 
-### 5)As an **Amazon employee**, I want to **ensure the Echo Dot has no critical firmware update vulnerabilities** so that **malicious users cannot remotely flash their own firmware onto unauthorized Echo Dots**.
+### 5) As an **Amazon employee**, I want to **ensure the Echo Dot has no critical firmware update vulnerabilities** so that **malicious users cannot remotely flash their own firmware onto unauthorized Echo Dots**.
 
 Acceptance Criteria:
 * Pentest the firmware update system.
