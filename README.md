@@ -56,7 +56,7 @@ Timeline last updated: 3/9/2017
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilities |
 
 # User Stories
-### 1) As a *normal user*, the main action I will be conducting is *giving verbal requests to Alexa* so I can *have her automate tasks for me like a personal assistant*.
+### 1) As an *end user*, the main action I will be conducting is *giving verbal requests to Alexa* so I can *have her automate tasks for me like a personal assistant*.
 
 Acceptance Criteria:
 * Obtain a fundamental understanding of the hardware and software routines used by the Echo Dot and Alexa.
@@ -64,7 +64,7 @@ Acceptance Criteria:
 
 ---
 
-### 2) As a *normal user*, I want to *be confident that my Echo Dot is secure* so I can *trust it to administer the security of my home* and *maintain confidentiality of my personal information*.
+### 2) As an *end user*, I want to *be confident that my Echo Dot is secure* so I can *trust it to administer the security of my home* and *maintain confidentiality of my personal information*.
 
 Acceptance Criteria:
 * Pentest the default Echo Dot features for vulnerabilities.
@@ -77,7 +77,7 @@ Acceptance Criteria:
 
 ---
 
-### 3) As a *normal user*, I want to *download and install an Alexa Skill* to my Echo Dot so I can *add new features over time*.
+### 3) As an *end user*, I want to *download and install an Alexa Skill* to my Echo Dot so I can *add new features over time*.
 
 Acceptance Criteria:
 * Pentest the Alexa Skill download system.
