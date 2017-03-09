@@ -23,7 +23,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 Timeline last updated: 3/9/2017
 
 ### Gantt Chart
-![Project Gantt Chart](/Echo Dot Project Timeline 3-9.png)
+![Project Gantt Chart](/Echo Dot Project Timeline 3-9 v2.png)
 
 ### Tabular Project Timeline
 |Item | Start | End | Duration
