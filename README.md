@@ -16,7 +16,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
   * Attempt to be the first known group to root an Echo Dot v2 
   * If rooting is successful, attempt to develop a proof-of-concept firmware exploit
   * Find a vulnerability that could lead to compromise of the Echo Dot through the Skills API
-  * Find the threshold decibel levels required to converse with Alexa to develop secure usage practices
+  * Develop secure usage practices by finding the threshold decibel levels required to converse with Alexa
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Proposed Project Timeline
