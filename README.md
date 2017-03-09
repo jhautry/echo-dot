@@ -112,7 +112,7 @@ Acceptance Criteria:
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
 
 ### Version 2
-![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
+![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v2.png)
 
 # Resources/Technology Needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
