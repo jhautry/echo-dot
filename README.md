@@ -20,21 +20,25 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Proposed Project Timeline
-![Project Gantt Chart](/Echo Dot Project Timeline v2.png)
+Last updated 3/9/2017
+
+![Project Gantt Chart](/Echo Dot Project Timeline 3-9.png)
 
 |Item | Start | End | Duration
 |------------ | -------------|-------------|-------------|
 |Planning | 3/2 | 3/9 | 1 Week|
 |Continued Research | 3/2 | 3/23 | 3 Weeks|
-|Acquire Additional Hardware | 3/2 | 3/16 | 2 Weeks|
-|Diagram Echo Dot Hardware | 3/2 | 3/16 |  1 Week|
-|Pentest Network Vulnerabilities | 3/9 | 4/13 | 5 Weeks|
-|Pentest Firmware Vulnerabilities | 3/9 | 4/13 | 5 Weeks|
-|Find Vulnerability in Skills API | 3/9 | 4/13 | 5 Weeks|
-|Find Vulnerability in Alexa Remote | 3/16 | 4/13 | 4 Weeks|
-|Write Report | 4/6 | 4/27 | 3 Weeks|
-|Create Presentation Slides | 4/6 | 4/20 | 3 Weeks|
-|Milestone 2 | TBA |  |  |
+|Acquire Additional Hardware | 3/2 | 3/23 | 3 Weeks|
+| **M2** Design Architectural Diagrams | 3/2 | 3/30 | 4 Weeks|
+| **M2** Design Activity Diagrams | 3/9 | 3/30 | 3 Weeks|
+|*Pentest Network Vulnerabilities | 3/9 | 4/13 | 5 Weeks|
+|*Pentest Skills API | 3/9 | 4/13 | 5 Weeks|
+|*Pentest Firmware Vulnerabilities | 3/23 | 4/13 | 3 Weeks|
+|*Pentest Alexa Remote | 3/23 | 4/13 | 3 Weeks|
+| **M2** Develop User Story Realizations | 3/23 | 4/3 | 11 Days|
+|**Milestone 2 Due** | 4/3 | 4/3 | **DUE** |
+|Write Final Report | 4/6 | 4/27 | 3 Weeks|
+|Create Presentation Slides | 4/6 | 4/20 | 2 Weeks|
 |Milestone 3 | TBA |  |  |
 |Presentations | TBA |  |  |
 
@@ -106,7 +110,7 @@ Acceptance Criteria:
 # Resources/Technology Needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
-|Another Echo Dot v2| Possibly | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
+|Another Echo Dot v2| Yes | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
 |Alexa Voice Remote| Yes | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
 |WiFi Pineapple| Yes | James | For testing man-in-the-middle attack possibilities |
 |Android Debuggers| No | Matt | Look into Android debuggers |
@@ -121,4 +125,3 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 * James Autry - jhautry
 * Tim Gekas - tgekas
 * Matthew Sutton - nfiniteecho
-
