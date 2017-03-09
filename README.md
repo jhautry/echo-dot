@@ -48,6 +48,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 
 # User Stories
 1. As a **normal user**, I want to **give verbal requests to Alexa** (play music, order a pizza, voice control my smart-home, request an Uber, etc.) so I can **have her automate tasks for me like a personal assistant**.
+
 Acceptance Criteria:
 * Obtain a deep understanding of the Echo Dot's inner workings to identify Alexa's basic hardware and software routines.
 * Pentest Alexa's features to test for bugs and vulnerabilities. Some specifics for this user story:
@@ -56,17 +57,24 @@ Acceptance Criteria:
   * Determine if network-based replay attacks can be used to conduct unauthorized tasks.
   
 2. As a **normal user**, I want to **feel confident that the Echo Dot is secure** so I can **trust it to safely handle the security of my house and online accounts**.
+
 Acceptance Criteria:
 * A comprehensive overview of the information 
 
 3. As a **normal user**, I want to **download and install a useful Alexa Skill** to my Echo Dot so I can **add new features over time**.
+
 Acceptance Criteria:
+* yo! 
 
 4. As a **developer**, I want to **be able to create an Alexa Skill** that users will find useful so they can **improve their Echo Dot functionality**.
+
 Acceptance Criteria:
+* yo!
 
 5. As an **Amazon employee**, I want to **ensure the Echo Dot has no critical vulnerabilities** so **malicious users cannot exploit the product and use it for nefarious purposes**.
+
 Acceptance Criteria:
+* yo!
 
 # Use/Misuse Case Diagram
 ![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
