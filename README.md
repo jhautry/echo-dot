@@ -20,7 +20,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Proposed Project Timeline
-Last updated 3/9/2017
+Last updated: 3/9/2017 - Please see added Milestone 2 Requirements
 
 ![Project Gantt Chart](/Echo Dot Project Timeline 3-9.png)
 
@@ -53,7 +53,7 @@ Last updated 3/9/2017
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilities |
 
 # User Stories
----
+
 ### 1) As a *normal user*, the main action I will be conducting is *giving verbal requests to Alexa* so I can *have her automate tasks for me like a personal assistant*.
 
 Acceptance Criteria:
