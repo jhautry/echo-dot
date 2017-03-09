@@ -12,10 +12,12 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 * Plan a thorough investigation into the security of the Echo Dot
 * Test the following strategies:
   * Intercept the Echo Dot's Wi-Fi communications and execute Man-in-the-Middle based attacks
-  * Attempt to be the first known group to root an Echo Dot v2 so we can develop a proof-of-concept firmware exploit
-  * Spoof a signal from an Alexa Voice Remote
-  * Find vulnerability that could lead to compromise of the Echo Dot through the Skill API
-* Provide a comprehensive writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
+  * Spoof an Alexa Voice Remote signal
+  * Attempt to be the first known group to root an Echo Dot v2 
+  * If rooting is successful, attempt to develop a proof-of-concept firmware exploit
+  * Find a vulnerability that could lead to compromise of the Echo Dot through the Skills API
+  * Find the threshold decibel levels required to converse with Alexa to develop secure usage practices
+* Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Proposed Project Timeline
 ![Project Gantt Chart](/Echo Dot Project Timeline v2.png)
@@ -42,7 +44,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 |-------------------|------------|------------|-------------|
 |Unable to install custom firmware (27) | 3 | 9 | Firmware is locked: no known access to debugger (sdb) and no SD card slot  |
 |Lack of team availability (24) | 6 | 4 | There is a possibility that there will be scheduling issues down the road which could lead to a loss of productivity |
-|Brick the Echo Dot  (20) | 10 | 2 | It is possible to brick the Echo Dot when installing firmwares.  A custom firmware install, or root method, could brick the Echo Dot |
+|Brick the Echo Dot  (20) | 10 | 2 | A custom firmware install, or root method, could brick the Echo Dot |
 |Unable to find potential network vulnerability (18) | 3 | 6 | There may be no network-based vulnerabilities | 
 |Unable to find potential vulnerability in Skills (16) | 2 | 8 | The custom coding skills API may have no vulnerabilities |
 
