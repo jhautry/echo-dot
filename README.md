@@ -23,7 +23,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 Timeline last updated: 3/9/2017
 
 ### Gantt Chart
-![Project Gantt Chart](/Echo Dot Project Timeline 3-9 v2.png)
+![Project Gantt Chart](https://raw.githubusercontent.com/jhautry/echo-dot/master/Echo%20Dot%20Project%20Timeline%203-9%20v2.png)
 
 ### Tabular Project Timeline
 |Item | Start | End | Duration
@@ -109,10 +109,10 @@ Acceptance Criteria:
 # Use/Misuse Case Diagram
 
 ### Version 1
-![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v1.png)
+![Use/Misuse Case Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Echo%20Dot%20Use%2BMisuse%20Case%20Diagram%20v1.png)
 
 ### Version 2
-![Use/Misuse Case Diagram](/Echo Dot Use+Misuse Case Diagram v2.png)
+![Use/Misuse Case Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Echo%20Dot%20Use%2BMisuse%20Case%20Diagram%20v2.png)
 
 # Resources/Technology Needed
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
