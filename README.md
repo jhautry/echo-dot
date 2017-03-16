@@ -108,10 +108,6 @@ Acceptance Criteria:
 
 # Use/Misuse Case Diagram
 
-### Version 1
-![Use/Misuse Case Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Echo%20Dot%20Use%2BMisuse%20Case%20Diagram%20v1.png)
-
-### Version 2
 ![Use/Misuse Case Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Echo%20Dot%20Use%2BMisuse%20Case%20Diagram%20v2.png)
 
 # Resources/Technology Needed
