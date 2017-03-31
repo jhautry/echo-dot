@@ -84,6 +84,9 @@ Acceptance Criteria:
 * Research if any malicious Alexa Skills have been developed successfully.
 * Research programming capabilities that are projected to be added to future versions of the Skills API and identify their potential vulnerabilities.
   
+Activity Diagram:
+![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
+
 ---
 
 ### 4) As a *developer*, I want to *be able to create an Alexa Skill* that users will find useful so they can *improve their Echo Dot functionality*.
