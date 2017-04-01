@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml-stylesheet href="file:///usr/bin/../share/nmap/nmap.xsl" type="text/xsl"?><nmaprun start="1491064678" profile_name="" xmloutputversion="1.04" scanner="nmap" version="7.40" startstr="Sat Apr  1 11:37:58 2017" args="nmap -p 1-65535 -T4 -A -v -Pn 172.16.42.213"><scaninfo services="1-65535" protocol="tcp" numservices="65535" type="syn"></scaninfo><verbose level="1"></verbose><debugging level="0"></debugging><output type="interactive">
+Starting Nmap 7.40 ( https://nmap.org ) at 2017-04-01 11:37 CDT
+NSE: Loaded 143 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 11:37
+Completed NSE at 11:37, 0.00s elapsed
+Initiating NSE at 11:37
+Completed NSE at 11:37, 0.00s elapsed
+Initiating ARP Ping Scan at 11:37
+Scanning 172.16.42.213 [1 port]
+Completed ARP Ping Scan at 11:37, 0.01s elapsed (1 total hosts)
+Initiating Parallel DNS resolution of 1 host. at 11:37
+Completed Parallel DNS resolution of 1 host. at 11:38, 6.50s elapsed
+Initiating SYN Stealth Scan at 11:38
+Scanning 172.16.42.213 [65535 ports]
+Discovered open port 4070/tcp on 172.16.42.213
+Completed SYN Stealth Scan at 11:38, 39.76s elapsed (65535 total ports)
+Initiating Service scan at 11:38
+Scanning 1 service on 172.16.42.213
+Completed Service scan at 11:38, 13.78s elapsed (1 service on 1 host)
+Initiating OS detection (try #1) against 172.16.42.213
+NSE: Script scanning 172.16.42.213.
+Initiating NSE at 11:39
+Completed NSE at 11:39, 0.02s elapsed
+Initiating NSE at 11:39
+Completed NSE at 11:39, 0.01s elapsed
+Nmap scan report for 172.16.42.213
+Host is up (0.0024s latency).
+Not shown: 49149 filtered ports, 16385 closed ports
+PORT     STATE SERVICE VERSION
+4070/tcp open  tripe?
+| fingerprint-strings: 
+|   DNSStatusRequest, DNSVersionBindReq, RPCCheck: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 48
+|     Date: Sat, 01 Apr 2017 16:38:56 GMT
+|     Connection: close
+|     Error 500: Server Error
+|     Client closed connection
+|   GenericLines, RTSPRequest: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 35
+|     Date: Sat, 01 Apr 2017 16:38:56 GMT
+|     Connection: close
+|     Error 500: Server Error
+|     request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.1 400 
+|     Content-Type: application/json
+|     Content-Length: 72
+|     {"status": 102, "statusString": "ERROR-BAD-REQUEST", "spotifyError": 0}
+|   SSLSessionReq, TLSSessionReq: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 48
+|     Date: Sat, 01 Apr 2017 16:39:04 GMT
+|     Connection: close
+|     Error 500: Server Error
+|_    Client closed connection
+1 service unrecognized despite returning data. If you know the service/version, please submit the following fingerprint at https://nmap.org/cgi-bin/submit.cgi?new-service :
+SF-Port4070-TCP:V=7.40%I=7%D=4/1%Time=58DFD79A%P=x86_64-pc-linux-gnu%r(Gen
+SF:ericLines,8C,"HTTP/1\.1\x20500\x20Server\x20Error\r\nContent-Length:\x2
+SF:035\r\nDate:\x20Sat,\x2001\x20Apr\x202017\x2016:38:56\x20GMT\r\nConnect
+SF:ion:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nBad\x20request")
+SF:%r(GetRequest,8D,"HTTP/1\.1\x20400\x20\r\nContent-Type:\x20application/
+SF:json\r\nContent-Length:\x2072\r\n\r\n{\"status\":\x20102,\x20\"statusSt
+SF:ring\":\x20\"ERROR-BAD-REQUEST\",\x20\"spotifyError\":\x200}\n")%r(HTTP
+SF:Options,8D,"HTTP/1\.1\x20400\x20\r\nContent-Type:\x20application/json\r
+SF:\nContent-Length:\x2072\r\n\r\n{\"status\":\x20102,\x20\"statusString\"
+SF::\x20\"ERROR-BAD-REQUEST\",\x20\"spotifyError\":\x200}\n")%r(RTSPReques
+SF:t,8C,"HTTP/1\.1\x20500\x20Server\x20Error\r\nContent-Length:\x2035\r\nD
+SF:ate:\x20Sat,\x2001\x20Apr\x202017\x2016:38:56\x20GMT\r\nConnection:\x20
+SF:close\r\n\r\nError\x20500:\x20Server\x20Error\nBad\x20request")%r(RPCCh
+SF:eck,99,"HTTP/1\.1\x20500\x20Server\x20Error\r\nContent-Length:\x2048\r\
+SF:nDate:\x20Sat,\x2001\x20Apr\x202017\x2016:38:56\x20GMT\r\nConnection:\x
+SF:20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient\x20closed\x20co
+SF:nnection")%r(DNSVersionBindReq,99,"HTTP/1\.1\x20500\x20Server\x20Error\
+SF:r\nContent-Length:\x2048\r\nDate:\x20Sat,\x2001\x20Apr\x202017\x2016:38
+SF::56\x20GMT\r\nConnection:\x20close\r\n\r\nError\x20500:\x20Server\x20Er
+SF:ror\nClient\x20closed\x20connection")%r(DNSStatusRequest,99,"HTTP/1\.1\
+SF:x20500\x20Server\x20Error\r\nContent-Length:\x2048\r\nDate:\x20Sat,\x20
+SF:01\x20Apr\x202017\x2016:38:56\x20GMT\r\nConnection:\x20close\r\n\r\nErr
+SF:or\x20500:\x20Server\x20Error\nClient\x20closed\x20connection")%r(SSLSe
+SF:ssionReq,99,"HTTP/1\.1\x20500\x20Server\x20Error\r\nContent-Length:\x20
+SF:48\r\nDate:\x20Sat,\x2001\x20Apr\x202017\x2016:39:04\x20GMT\r\nConnecti
+SF:on:\x20close\r\n\r\nError\x20500:\x20Server\x20Error\nClient\x20closed\
+SF:x20connection")%r(TLSSessionReq,99,"HTTP/1\.1\x20500\x20Server\x20Error
+SF:\r\nContent-Length:\x2048\r\nDate:\x20Sat,\x2001\x20Apr\x202017\x2016:3
+SF:9:04\x20GMT\r\nConnection:\x20close\r\n\r\nError\x20500:\x20Server\x20E
+SF:rror\nClient\x20closed\x20connection");
+MAC Address: 50:F5:DA:23:43:DF (Amazon Technologies)
+Device type: media device
+Running: Amazon embedded
+OS details: Amazon Kindle Paperwhite
+Uptime guess: 0.034 days (since Sat Apr  1 10:49:26 2017)
+Network Distance: 1 hop
+TCP Sequence Prediction: Difficulty=262 (Good luck!)
+IP ID Sequence Generation: All zeros
+
+TRACEROUTE
+HOP RTT     ADDRESS
+1   2.36 ms 172.16.42.213
+
+NSE: Script Post-scanning.
+Initiating NSE at 11:39
+Completed NSE at 11:39, 0.00s elapsed
+Initiating NSE at 11:39
+Completed NSE at 11:39, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 62.34 seconds
+           Raw packets sent: 114716 (5.050MB) | Rcvd: 16443 (657.840KB)
+</output><host comment=""><status state="up"></status><address addrtype="ipv4" vendor="" addr="172.16.42.213"></address><address addrtype="mac" vendor="Amazon Technologies" addr="50:F5:DA:23:43:DF"></address><hostnames></hostnames><ports><extraports count="49149" state="filtered"></extraports><extraports count="16385" state="closed"></extraports><port protocol="tcp" portid="4070"><state reason="syn-ack" state="open" reason_ttl="64"></state><service method="table" conf="3" name="tripe"></service></port></ports><os><portused state="open" portid="4070" proto="tcp"></portused><portused state="closed" portid="16384" proto="tcp"></portused><osmatch line="2575" name="Amazon Kindle Paperwhite" accuracy="100"><osclass type="media device" osfamily="embedded" vendor="Amazon" osgen="" accuracy="100"></osclass></osmatch></os><uptime lastboot="Sat Apr  1 10:49:26 2017" seconds="2974"></uptime><tcpsequence index="262" values="80D6F063,44F8073E,D20611FA,904FCB24,8E291513,E29E2BFD" difficulty="Good luck!"></tcpsequence><ipidsequence values="0,0,0,0,0,0" class="All zeros"></ipidsequence><tcptssequence values="488F3,488FD,48907,48911,4891B,48925" class="100HZ"></tcptssequence><trace port="" proto=""><hop rtt="2.36" host="" ipaddr="172.16.42.213" ttl="1"></hop></trace></host><runstats><finished timestr="Sat Apr  1 11:39:00 2017" time="1491064740"></finished><hosts down="0" total="1" up="1"></hosts></runstats></nmaprun>
