@@ -299,15 +299,57 @@ set_metadata("/cache/recovery/last_blocklist", "uid", 0, "gid", 0, "mode", 0444,
 |boot.img|Contains the kernel and ramdisk for Android|
 |tz.img|File not found -- contained in script, but may be Trusted Zone for HBOOT bootloader|
 |preloader.img| File not found -- contained in script: Unknown purpose|
-|target.blocklist|Metadata (length, mount_point, dev, and sha1) used for setup of partitions for ```/boot```, ```/recovery```, ```/lk```, ```/tee1```, and ```/boot0```
+|target.blocklist|Metadata (length, mount_point, dev, and sha1) used for setup of partitions for ```/boot```, ```/recovery```, ```/lk```, ```/tee1```, and ```/boot0```|
 
 
 ### Amazon Backend Diagram
 ![Backend Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Backend%20v1.png)
 
-Description
 
-# Activity Diagrams
+##### Alexa App Subsystem
+|Component| Description|
+|---------|------------|
+|App Panel| User accessing the Alexa app through Android/Apple mobile application|
+|Web Panel| User accessing the Alexa app through Amazon's web panel at:  http://alexa.amazon.com |
+|Display Card| Amazon displays user request history in a linked-list format entitled "Cards."  Users can remove old cards from their request history from the Home page on the Alexa app. Other options provided by Cards:<ul><li>Replay Audio Request</li><li>Search Bing for Request</li><li>Did Alexa do what you wanted?</li><li>View Product Details</li><li>Search for Product on Amazon</li><li>Add Product to Amazon Shopping Cart</li><li>Add Product to Shopping List</li><li>View Applicable Terms</li><li>See additional results for Product on Amazon</li><li>Learn more (FAQ)</li></ul>|
+|Execute Request| A user request will go through the Amazon app to be executed
+|Store Request|A user request through Alexa will always be sent to the Alexa App Database to provide a user with their request history|
+
+##### Amazon Alexa Database
+|Component| Description|
+|---------|------------|
+|User's Alexa History|Each request is sent to the Alexa App Database to be stored so all request history can be viewed from any device via the Alexa Web App or Mobile App.|
+|User's Alexa Settings|All Alexa app settings are stored to be synced across all devices|
+|User's Voice Profile| Alexa can be trained to better recognize a user's voice.  It is assumed a user voice profile is kept by Amazon for better voice recognition across multiple devices|
+|Other Entries|Smart home data, Group data (controlling multiple Amazon devices),  To-do list, etc.
+
+##### Amazon Product Database
+|Component| Description|
+|---------|------------|
+|Product Info|Stores product information such as price, quantity, size, color, etc.|
+|Supplier Info|Stores product supplier information (e.g. Amazon or third party retailer selling through Amazon)|
+|Shopping Cart|Stores user information regarding products in their shopping cart|
+|Terms|Amazon products and services each have Applicable terms that are viewable when querying products through the Alexa app|
+
+##### Amazon Account Database
+|Component| Description|
+|---------|------------|
+|User Account Info|Stores Amazon account information for <ul> <li>Order History</li> <li>Login & Security Settings</li> <li>1-Click Ordering</li> <li>Language</li> <li>Message Center</li> <li>and more</li> </ul>|
+|User Payment Info|Amazon Wallet user information includes: <ul> <li>Manage Payment Options</li> <li>Add Credit or Debit Card</li> <li>Amazon Credit Card</li> <li>Shop with Amazon Points</li> <li>Amazon Coins</li> <li>Gift Card Information</li> </ul>
+|Amazon Prime Status|The Alexa app checks a user for Prime membership to enable certain premium features|
+|Digital Content|Amazon accounts have access to digital content they purchase through Amazon|
+|Other Entries|There is a wealth of other personal information that is stored by Amazon not listed here|
+
+##### Third Party Account Database
+Generalized descriptions: there are an abundance of default apps and downloadable Skills that interface with many third party services
+
+|Component| Description|
+|---------|------------|
+|Account Information|User e-mails, usernames, passwords, used for user authentication & linking accounts|
+|Preferences|User preferences for third party apps to sync with Alexa|
+|Payment Information|Payment information may be stored on third party databases|
+|Order Information|Ordering third party services may store a user's order information (e.g. Pizza orders or Uber driver location)|
+|Other Entries|Other database entries exist that may be referenced by the Alexa app|
 
 ### User Story 1 Activity Diagram
 Giving a verbal request to the Echo Dot
