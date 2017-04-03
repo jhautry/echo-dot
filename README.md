@@ -351,6 +351,8 @@ Generalized descriptions: there are an abundance of default apps and downloadabl
 |Order Information|Ordering third party services may store a user's order information (e.g. Pizza orders or Uber driver location)|
 |Other Entries|Other database entries exist that may be referenced by the Alexa app|
 
+# Activity Diagrams
+
 ### User Story 1 Activity Diagram
 Giving a verbal request to the Echo Dot
 ![First User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US1%20Activity%20Diagram%20v1.png)
