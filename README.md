@@ -127,7 +127,7 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 # Architectural Diagrams
 
 ### Hardware Diagram
-![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Hardware%20v1.png)
+![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Hardware%20v2.png)
 
 #### Hardware Main Specs
 
@@ -152,7 +152,7 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 References: [Source](https://www.allaboutcircuits.com/news/teardown-tuesday-amazon-echo-dot-v2/)
 
 ### Firmware Diagram
-![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Firmware%20v1.png)
+![Firmware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Firmware%20v1.png)
 
 #### Voice & Action Processing Subsystem
 
@@ -303,9 +303,9 @@ set_metadata("/cache/recovery/last_blocklist", "uid", 0, "gid", 0, "mode", 0444,
 
 
 ### Amazon Backend Diagram
-Goes here
+![Backend Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Backend%20v1.png)
 
-Description of components goes here
+Description
 
 # Activity Diagrams
 
