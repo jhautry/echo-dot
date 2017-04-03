@@ -310,7 +310,8 @@ Description of components goes here
 # Activity Diagrams
 
 ### User Story 1 Activity Diagram
-
+Giving a verbal request to the Echo Dot
+![First User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US1%20Activity%20Diagram%20v1.png)
 ### User Story 2 Activity Diagram
 
 ### User Story 3 Activity Diagram
