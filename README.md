@@ -129,7 +129,7 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 ### Hardware Diagram
 ![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Hardware%20v1.png)
 
-**Hardware Main Specs**
+#### Hardware Main Specs
 
 |Component| Name| Description|
 |---------|-----------|-------|
@@ -138,7 +138,7 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 |Wireless|MEDIATEK MT6625LN | 4-in-1: Wi-Fi, Bluetooth, FM, & GPS|
 |IC Power Management|MEDIATEK MT6323LGA | Audio Amplifiers and LED Drivers|
 
-**Other Hardware**
+#### Other Hardware
 
 |Component| Description|
 |---------|------------|
@@ -149,10 +149,158 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 |Bluetooth Transmitter| Used in the Alexa Remote to transmit voice requests to the Echo Dot|
 |Bluetooth Receiver |Used by Bluetooth speakers to receive transmissions from the Echo Dot to play music, or listen to an Alexa voice reply|
 
-### Firmware Diagram
-Goes here
+References: [Source](https://www.allaboutcircuits.com/news/teardown-tuesday-amazon-echo-dot-v2/)
 
-Description of components goes here
+### Firmware Diagram
+![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Firmware%20v1.png)
+
+#### Voice & Action Processing Subsystem
+
+
+##### Pyron Standup Recognizer
+
+The folder ```\local\models\keyword\en-US\ALEXA``` contains configuration and working files for Alexa's voice recognition.  *Contents*:
+* ALEXA.bg.hclg.pfst
+* ALEXA.fg.hclg.pfst
+* ALEXA.psvm
+* ALEXA.scales
+* final.trans
+* finalQuant.mlp
+* kw.cfg.json
+* nonspeech_words.lst
+* op.cfg.json
+* pdf.counts
+* phones.txt
+* pryon.config
+* pryon.manifest
+* STOP.bg.hclg.pfst
+* STOP.fg.hclg.pfst
+* STOP.psvm
+* STOP.scales
+* train_glob.cmvn
+* transform.mlp
+* words.shrunk.txt.shrunk.txt
+
+The files ```kw.cfg.json```, ```op.cfg.json```, ```pryon.config```,  ```ALEXA.psvm```, and ```STOP.psvm``` are interesting to point out.  The JSON files contain configuration for Alexa's hearing.  Here is a portion of ```kw.cfg.json```:
+```json
+...
+op.cfg.json "ALEXA",
+                "spotter": {
+                    "classification-limits": {
+                        "max-per-window": 3,
+                        "stickiness": 0,
+                        "window-size": 100
+                    },
+                    "classification-thresholds": {
+                        "accept-threshold": 0.0,
+                        "escalate-threshold": 1e+37,
+                        "notify-threshold": -4.0,
+                    },
+                    "cleanup-period": 6000,
+                    "escalation-period": 200,
+                    "hmm-thresholds": {
+                        "accept-threshold": 0.0,
+                        "escalate-threshold": 1e+37,
+                        "notify-threshold": 0.0
+                    },
+                    "lock-period": 40,
+                    "probabilistic-hmm-near-miss": {
+                        "decay": 15,
+                        "enabled": true
+                    }
+                }
+...
+```
+
+It implements ```op.cfg.json``` which contains rules for setting awake and sleep status for Alexa based on words she hears:
+```json
+{
+  "awake": {
+    "rules": [
+      {
+        "name": "ALEXA", 
+        "next": "awake"
+      }, 
+      {
+        "name": "STOP", 
+        "next": "sleep"
+      }
+    ], 
+    "timeout": {
+      "duration": 175, 
+      "next": "sleep"
+    }
+  }, 
+  ...
+  ```
+  
+```pryon.config``` defines variables for audio frequency, audio upscaling, and more.  Specifically, it contains settings that deal with keyword spotting:
+```
+...
+# keyword spotter
+search.decoder_type = "kaldi-key-phrase"
+search.trans_filepath = "final.trans"
+keyword_spotter.config_filepath = "kw.cfg.json"
+keyword_spotter.op_config_filepath = "op.cfg.json"
+keyword_spotter.emit_nearmiss = 1
+...
+```
+
+```ALEXA.psvm``` at 1,173KB and ```STOP.psvm``` at 307KB appear to be voice models used to cross example for keyword detection.  The extension .psvm may stand for Pyron Standup Voice Model.
+
+
+##### All Other Componenets for Voice & Action Processing Subsystem
+|Component| Description|
+|---------|------------|
+|Save Audio|Saves the recorded audio to send and store in the Alexa app |
+|Speech-to-Text|Processes your voice request into text to be stored in the Alexa app|
+|Send Request| Uses Wi-Fi to transmit your request to Amazon servers using port 8080 or 443|
+|Response Processing| The Echo Dot receives a response from Amazon servers and prepares to respond by storing data in memory|
+|Alexa Verbal Response| The software action of executing Alexa's voice module to respond audibly to the user|
+
+#### Firmware Update Subsystem
+
+|Component| Description|
+|---------|------------|
+|Download Firmware| Downloads firmware updates from Amazon servers|
+|Install Firmware| Begins the software process of updating firmware|
+|Factory Reset Service| A binary exectuable that will begin to execute a factory reset
+
+##### Firmware Scripts
+```buttonHandler.sh``` contains logic for Echo Dot tactile button presses.  If a super long press, defined by variable ```$4 ```, is held then ```/system/bin/start factory-reset``` will be ran:
+```shell
+...
+# Perform a factory reset if the factory reset button combination is hit for a super long press.
+if [ "$3" = "factoryReset" -a $4 -eq 6 ]; then
+    /system/bin/start factory-reset
+fi
+...
+```
+
+```updater-script``` contains commands to patch/extract system images.  It extracts the files ```lk.bin```, ```boot.img```, ```tz.img```, ```preloader.img```, and ```target.blocklist```:
+```
+getprop("ro.product.device") == "biscuit" || abort("This package is for \"biscuit\" devices; this is a \"" + getprop("ro.product.device") + "\".");
+show_progress(0.750000, 0);
+ui_print("Patching system image unconditionally...");
+block_image_update("/dev/block/other-system", package_extract_file("system.transfer.list"), "system.new.dat", "system.patch.dat");
+show_progress(0.050000, 5);
+package_extract_file("boot.img", "/dev/block/other-boot");
+show_progress(0.200000, 10);
+package_extract_file("images/lk.bin", "/dev/block/other-lk");
+package_extract_file("images/tz.img", "/dev/block/platform/mtk-msdc.0/by-name/tee1");
+package_extract_file("images/preloader.img", "/dev/block/mmcblk0boot0");
+package_extract_file("META-INF/com/amazon/android/target.blocklist", "/cache/recovery/last_blocklist");
+set_metadata("/cache/recovery/last_blocklist", "uid", 0, "gid", 0, "mode", 0444, "capabilities", 0x0);
+```
+
+|Binary/Image| Description|
+|---------|------------|
+|lk.bin|File not found -- contained in script, but may be UBOOT universal boot loader for embedded systems, targeting different platforms including ARM|
+|boot.img|Contains the kernel and ramdisk for Android|
+|tz.img|File not found -- contained in script, but may be Trusted Zone for HBOOT bootloader|
+|preloader.img| File not found -- contained in script: Unknown purpose|
+|target.blocklist|Metadata (length, mount_point, dev, and sha1) used for setup of partitions for ```/boot```, ```/recovery```, ```/lk```, ```/tee1```, and ```/boot0```
+
 
 ### Amazon Backend Diagram
 Goes here
