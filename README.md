@@ -130,6 +130,7 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 ![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Hardware%20v1.png)
 
 **Hardware Main Specs**
+
 |Component| Name| Description|
 |---------|-----------|-------|
 |CPU|MEDIATEK ARM MT8163V|1.5Ghz Quad Core,64-bit, System-on-Chip|
@@ -138,14 +139,15 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 |IC Power Management|MEDIATEK MT6323LGA | Audio Amplifiers and LED Drivers|
 
 **Other Hardware**
+
 |Component| Description|
-|---------|-----------|
+|---------|------------|
 |Microphone x 7|Seven microphones are used to obtain verbal input for Alexa to process|
 |Analog-to-Digital Converter (ADC)| Converts an analog verbal request into a digital form for processing|
 |Digital-to-Analog Converter (DAC)| Converts digital signals into analog signals to send to the speaker for Alexa voice reply|
 |Tactile Switch x 4| Used to mute, control volume, and perform an Alexa voice request
 |Bluetooth Trasmitter| Used in the Alexa Remote to transmit voice requests to the Echo Dot|
-|Bluetooth  Receiver|Used by bluetooth speakers to receive transmissions from the Echo Dot to play music, or listen to an Alexa voice reply
+|Bluetooth  Receiver|Used by bluetooth speakers to receive transmissions from the Echo Dot to play music, or listen to an Alexa voice reply|
 
 ### Firmware Diagram
 Goes here
