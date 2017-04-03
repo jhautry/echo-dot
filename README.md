@@ -146,8 +146,8 @@ https://trello.com/b/lrGlLkCc/echo-dot-project-main
 |Analog-to-Digital Converter (ADC)| Converts an analog verbal request into a digital form for processing|
 |Digital-to-Analog Converter (DAC)| Converts digital signals into analog signals to send to the speaker for Alexa voice reply|
 |Tactile Switch x 4| Used to mute, control volume, and perform an Alexa voice request
-|Bluetooth Trasmitter| Used in the Alexa Remote to transmit voice requests to the Echo Dot|
-|Bluetooth  Receiver|Used by bluetooth speakers to receive transmissions from the Echo Dot to play music, or listen to an Alexa voice reply|
+|Bluetooth Transmitter| Used in the Alexa Remote to transmit voice requests to the Echo Dot|
+|Bluetooth Receiver |Used by Bluetooth speakers to receive transmissions from the Echo Dot to play music, or listen to an Alexa voice reply|
 
 ### Firmware Diagram
 Goes here
@@ -157,7 +157,7 @@ Description of components goes here
 ### Amazon Backend Diagram
 Goes here
 
-Description of componenets goes here
+Description of components goes here
 
 # Activity Diagrams
 
