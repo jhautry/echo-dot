@@ -84,9 +84,6 @@ Acceptance Criteria:
 * Research if any malicious Alexa Skills have been developed successfully.
 * Research programming capabilities that are projected to be added to future versions of the Skills API and identify their potential vulnerabilities.
   
-Activity Diagram:
-![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
-
 ---
 
 ### 4) As a *developer*, I want to *be able to create an Alexa Skill* that users will find useful so they can *improve their Echo Dot functionality*.
@@ -126,6 +123,95 @@ Acceptance Criteria:
 
 # First Sprint Plan
 https://trello.com/b/lrGlLkCc/echo-dot-project-main
+
+# Architectural Diagrams
+
+### Hardware Diagram
+![Hardware Architectural Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/Architectural%20Diagram%20-%20Hardware%20v1.png)
+
+**Hardware Main Specs**
+|Component| Name| Description|
+|---------|-----------|-------|
+|CPU|MEDIATEK ARM MT8163V|1.5Ghz Quad Core,64-bit, System-on-Chip|
+|RAM|MICRON 6PA98|4GB, LPDDR3, Single Channel
+|Wireless|MEDIATEK MT6625LN | 4-in-1: Wi-Fi, Bluetooth, FM, & GPS|
+|IC Power Management|MEDIATEK MT6323LGA | Audio Amplifiers and LED Drivers|
+
+**Other Hardware**
+|Component| Description|
+|---------|-----------|
+|Microphone x 7|Seven microphones are used to obtain verbal input for Alexa to process|
+|Analog-to-Digital Converter (ADC)| Converts an analog verbal request into a digital form for processing|
+|Digital-to-Analog Converter (DAC)| Converts digital signals into analog signals to send to the speaker for Alexa voice reply|
+|Tactile Switch x 4| Used to mute, control volume, and perform an Alexa voice request
+|Bluetooth Trasmitter| Used in the Alexa Remote to transmit voice requests to the Echo Dot|
+|Bluetooth  Receiver|Used by bluetooth speakers to receive transmissions from the Echo Dot to play music, or listen to an Alexa voice reply
+
+### Firmware Diagram
+Goes here
+
+Description of components goes here
+
+### Amazon Backend Diagram
+Goes here
+
+Description of componenets goes here
+
+# Activity Diagrams
+
+### User Story 1 Activity Diagram
+
+### User Story 2 Activity Diagram
+
+### User Story 3 Activity Diagram
+Enabling an Alexa Skill for use on the Echo Dot
+![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
+
+# User Story Realization
+
+### User Story 1 Realization
+Writeup here:
+
+Component Tested
+
+Purpose
+
+How the Test was Conducted
+
+Results Discovered from Test
+
+Link to Trello Card
+
+### User Story 2 Realization
+Writeup here:
+
+Component Tested
+
+Purpose
+
+How the Test was Conducted
+
+Results Discovered from Test
+
+Link to Trello Card
+
+
+### User Story 3 Realization
+Writeup here:
+
+Component Tested
+
+Purpose
+
+How the Test was Conducted
+
+Results Discovered from Test
+
+Link to Trello Card
+
+# Milestone 3 Planning
+https://trello.com/b/hllck0Nz/echo-dot-milestone-3-kanban
+
 
 # Team Members
 * James Autry - jhautry
