@@ -365,8 +365,46 @@ Enabling an Alexa Skill for use on the Echo Dot
 # User Story Realization
 
 ### User Story 1 Realization
-Writeup here:
-
+A port scan of the Echo Dot using ```nmap -p 1-65535 -T4 -A -v -Pn 172.16.42.213``` shows TCP port ```4070``` as open and accepting connections:
+```
+Scanning 172.16.42.213 [65535 ports]
+Discovered open port 4070/tcp on 172.16.42.213
+```
+The Nmap scan report reveals that TCP port ```4070``` is used to connect to Spotify:
+```
+Nmap scan report for 172.16.42.213
+Host is up (0.0024s latency).
+Not shown: 49149 filtered ports, 16385 closed ports
+PORT     STATE SERVICE VERSION
+4070/tcp open  tripe?
+| fingerprint-strings: 
+|   DNSStatusRequest, DNSVersionBindReq, RPCCheck: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 48
+|     Date: Sat, 01 Apr 2017 16:38:56 GMT
+|     Connection: close
+|     Error 500: Server Error
+|     Client closed connection
+|   GenericLines, RTSPRequest: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 35
+|     Date: Sat, 01 Apr 2017 16:38:56 GMT
+|     Connection: close
+|     Error 500: Server Error
+|     request
+|   GetRequest, HTTPOptions: 
+|     HTTP/1.1 400 
+|     Content-Type: application/json
+|     Content-Length: 72
+|     {"status": 102, "statusString": "ERROR-BAD-REQUEST", "spotifyError": 0}
+|   SSLSessionReq, TLSSessionReq: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 48
+|     Date: Sat, 01 Apr 2017 16:39:04 GMT
+|     Connection: close
+|     Error 500: Server Error
+|_    Client closed connection
+```
 Component Tested
 
 Purpose
