@@ -406,7 +406,7 @@ See: [alexa-app.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-c
 
 *Conducted*: Using sslsplit on the WiFi Pineapple to intercept and log the encrypted traffic to and from the Echo Dot. Wireshark was used to analyze the network traffic.
 
-*Results*: The Echo Dot fails to connect to the Amazon cloud and gives a verbal message saying “Sorry. I’m having trouble speaking right now”. The encrypted network traffic captured by Wireshark shows an “invalid certificate authority” alert. 
+*Results*: The Echo Dot fails to connect to the Amazon backend and gives a verbal message saying “Sorry, I’m having trouble understanding right now. Please try a little later”. The encrypted network traffic captured by Wireshark shows an “invalid certificate authority” alert. 
 
 See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/echodot-sslsplit.pcapng)
 
