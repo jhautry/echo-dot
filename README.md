@@ -425,7 +425,7 @@ See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/p
 Scanning 172.16.42.213 [65535 ports]
 Discovered open port 4070/tcp on 172.16.42.213
 ```
-Nmap scan report reveals that TCP port ```4070``` is used to connect to Spotify:
+The Nmap scan report reveals that TCP port ```4070``` is used to connect to Spotify:
 ```
 Nmap scan report for 172.16.42.213
 Host is up (0.0024s latency).
@@ -464,18 +464,66 @@ PORT     STATE SERVICE VERSION
 ---
 
 ## User Story 2 Realization
-Writeup here:
 
-Component Tested
+User Story 2 description goes here <br><br>
 
-Purpose
+---
+**Test: Echo Dot Setup Mode network analysis**
 
-How the Test was Conducted
+*Components Tested*: Firmware SendRequest
 
-Results Discovered from Test
+*Purpose*: Determine if any default services transmit data securely during setup mode.
 
-Link to Trello Card
+*Conducted*: nmap was used to find open ports when services are running
 
+*Results*: A port scan of the Echo Dot using ```nmap -v -Pn 10.201.126.241``` shows TCP ports ```443``` and ```8080``` as open and accepting connections:
+```
+Scanning 10.201.126.241 [1000 ports]
+Discovered open port 8080/tcp on 10.201.126.241
+Discovered open port 443/tcp on 10.201.126.241
+```
+The Nmap scan report reveals that TCP port ```443``` is protected by tcpwrapper and TCP port ```8080``` is an HTTP proxy:
+```
+Nmap scan report for 10.201.126.241
+Host is up (0.0041s latency).
+Not shown: 998 filtered ports
+PORT     STATE SERVICE    VERSION
+443/tcp  open  tcpwrapped
+8080/tcp open  http-proxy
+| fingerprint-strings: 
+|   DNSVersionBindReq, RPCCheck, Socks4, Socks5: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 48
+|     Date: Fri, 31 Mar 2017 20:37:37 GMT
+|     Connection: close
+|     Error 500: Server Error
+|     Client closed connection
+|   FourOhFourRequest, GetRequest: 
+|     HTTP/1.1 405 Method Not Allowed
+|     Content-Length: 63
+|     Content-Type: text/plain
+|     Connection: close
+|     Allow: POST, OPTIONS
+|     Error 405: Method Not Allowed - Unsupported HTTP Request Method
+|   GenericLines, RTSPRequest: 
+|     HTTP/1.1 500 Server Error
+|     Content-Length: 35
+|     Date: Fri, 31 Mar 2017 20:37:37 GMT
+|     Connection: close
+|     Error 500: Server Error
+|     request
+|   HTTPOptions: 
+|     HTTP/1.1 200 OK
+|     Content-Length: 0
+|     Content-Type: text/plain
+|     Connection: close
+|_    Allow: POST, OPTIONS
+| http-methods: 
+|_  Supported Methods: POST OPTIONS
+|_http-title: Site doesn't have a title (text/plain).
+```
+
+---
 
 ## User Story 3 Realization
 Writeup here:
