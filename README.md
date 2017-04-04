@@ -363,56 +363,64 @@ Enabling an Alexa Skill for use on the Echo Dot
 ![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
 
 # User Story Realization
-
+<br><br>
 ## User Story 1 Realization
 
-User Story 1 focuses on gaining a fundamental understanding of the Echo Dot and Alexa App's functionality.  We have found that almost all traffic coming in or out of the Dot or Alexa App is encrypted using TLS v1.2 <br><br><br><br>
+User Story 1 focuses on gaining a fundamental understanding of the Echo Dot and Alexa App's functionality.  We have found that almost all traffic coming in or out of the Dot or Alexa App is encrypted using TLS v1.2 <br><br>
+
+---
 
 **Test: Echo Dot network analysis**
 
-Components Tested: Firmware SendRequest and ResponseProcessing
+*Components Tested*: Firmware SendRequest and ResponseProcessing
 
-Purpose: To determine if network traffic to and from the Echo Dot is transmitted securely during normal usage.
+*Purpose*: To determine if network traffic to and from the Echo Dot is transmitted securely during normal usage.
 
-Conducted: Using tcpdump on the WiFi Pineapple to capture network traffic to and from the Echo Dot. Wireshark was used to analyze the network traffic.
+*Conducted*: Using tcpdump on the WiFi Pineapple to capture network traffic to and from the Echo Dot. Wireshark was used to analyze the network traffic.
 
-Results: Network traffic to and from the Echo Dot is encrypted with TLSv1.2. See: [echodot-normal.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/echodot-normal.pcapng)
+*Results*: Network traffic to and from the Echo Dot is encrypted with TLSv1.2. 
+
+See: [echodot-normal.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/echodot-normal.pcapng)
 
 ---
 
 **Test: Alexa App network analysis**
 
-Component Tested: Backend ExecuteRequest & AppPanel
+*Component Tested*: Backend ExecuteRequest & AppPanel
 
-Purpose: To determine if network traffic to and from the Alexa app is transmitted securely during normal usage.
+*Purpose*: To determine if network traffic to and from the Alexa app is transmitted securely during normal usage.
 
-Conducted: Using tcpdump on the WiFi Pineapple to capture network traffic to and from the Alexa app on an Android phone. Wireshark was used to analyze the network traffic.
+*Conducted*: Using tcpdump on the WiFi Pineapple to capture network traffic to and from the Alexa app on an Android phone. Wireshark was used to analyze the network traffic.
 
-Results: Network traffic to and from the Alexa App is encrypted with TLSv1.2. See: [alexa-app.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/alexa-app.pcapng)
+*Results*: Network traffic to and from the Alexa App is encrypted with TLSv1.2. 
+
+See: [alexa-app.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/alexa-app.pcapng)
 
 ---
 
 **Test: Echo Dot man-in-the-middle attack**
 
-Components Tested: Firmware SendRequest
+*Components Tested*: Firmware SendRequest
 
-Purpose: To determine if the encrypted traffic to and from the Echo Dot can be intercepted and logged by an attacker.
+*Purpose*: To determine if the encrypted traffic to and from the Echo Dot can be intercepted and logged by an attacker.
 
-Conducted: Using sslsplit on the WiFi Pineapple to intercept and log the encrypted traffic to and from the Echo Dot. Wireshark was used to analyze the network traffic.
+*Conducted*: Using sslsplit on the WiFi Pineapple to intercept and log the encrypted traffic to and from the Echo Dot. Wireshark was used to analyze the network traffic.
 
-Results: The Echo Dot fails to connect to the Amazon cloud and gives a verbal message saying “Sorry. I’m having trouble speaking right now”. The encrypted network traffic captured by Wireshark shows an “invalid certificate authority” alert. See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/echodot-sslsplit.pcapng)
+*Results*: The Echo Dot fails to connect to the Amazon cloud and gives a verbal message saying “Sorry. I’m having trouble speaking right now”. The encrypted network traffic captured by Wireshark shows an “invalid certificate authority” alert. 
+
+See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/echodot-sslsplit.pcapng)
 
 ---
 
 **Test: Default Alexa Apps network analysis**
 
-Components Tested: Firmware SendRequest
+*Components Tested*: Firmware SendRequest
 
-Purpose: Determine if any default apps transmit data securely during normal usage.
+*Purpose*: Determine if any default apps transmit data securely during normal usage.
 
-Conducted: nmap was used to find open ports when apps are running
+*Conducted*: nmap was used to find open ports when apps are running
 
-Results: A port scan of the Echo Dot using ```nmap -p 1-65535 -T4 -A -v -Pn 172.16.42.213``` shows TCP port ```4070``` as open and accepting connections:
+*Results*: A port scan of the Echo Dot using ```nmap -p 1-65535 -T4 -A -v -Pn 172.16.42.213``` shows TCP port ```4070``` as open and accepting connections:
 ```
 Scanning 172.16.42.213 [65535 ports]
 Discovered open port 4070/tcp on 172.16.42.213
