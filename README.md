@@ -465,7 +465,7 @@ PORT     STATE SERVICE VERSION
 
 ## User Story 2 Realization
 
-User Story 2 description goes here <br><br>
+User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's default features and IoT capabilities. <br><br>
 
 ---
 **Test: Echo Dot Setup Mode network analysis**
