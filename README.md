@@ -357,7 +357,8 @@ Generalized descriptions: there are an abundance of default apps and downloadabl
 Giving a verbal request to the Echo Dot
 ![First User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US1%20Activity%20Diagram%20v1.png)
 ### User Story 2 Activity Diagram
-
+The Echo Dot Registration Process
+![Second User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US2%20Activity%20Diagram%20v1.png)
 ### User Story 3 Activity Diagram
 Enabling an Alexa Skill for use on the Echo Dot
 ![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
