@@ -526,17 +526,32 @@ PORT     STATE SERVICE    VERSION
 ---
 
 ## User Story 3 Realization
-Writeup here:
+User Story 3 focuses on gaining a fundamental understanding of the Alexa App's Skills functionality. We have found that while most traffic coming in or out of the Alexa App is encrypted using TLS v1.2, the Alexa App uses cookies and images which are not encrypted. <br><br>
 
-Component Tested
+---
 
-Purpose
+**Test: Alexa App Skills analysis**
 
-How the Test was Conducted
+*Components Tested*: Backend ExecuteRequest & AppPanel
 
-Results Discovered from Test
+*Purpose*: Determine if the Alexa App transmits data securely.
 
-Link to Trello Card
+*Conducted*: DWall running on the WiFi Pineapple was set to listen for outgoing connections from the Alexa App.
+
+*Results*: The following HTTP connections were found:
+
+| Client | URL |
+|---------|------------|
+| 172.16.42.216 | http://alexa.amazon.com/manifest/pitangui.appcache |
+| 172.16.42.213 | http://spectrum.s3.amazonaws.com/kindle-wifi/wifistub-echo.html |
+
+The following cookie containing a session token was found:
+
+| Client | Cookie |
+|---------|------------|
+| 172.16.42.216 | csrf=-596473391; session-id-time=2082787201l; session-token="zj1u6jHoFSW/IKiqqjg5oA7Pq6uetskaezQDXSOK44gc2ArEbaAhzMg5bL5JSwlONVD8MYB/HCT88//NsZj2rzh3bJh4u9vYEjdJ2FVOMpwqZiWEn5JUXB8TGWAr8q5rkXoXQc9aIN7erfLzFfF5LIz0xDya8chmCyCp438fY2B7Uxd7a6Zwi5xtvCcfqdDCzZP3W2A9ud8="; session-id=135-0434014-3121322; ubid-main=168-7802293-2301129; x-main="qwLIvaKNbaFe0EeqVW3DYH38WVbg@ipOYhoSuZtoYC0Y8RFqcVJQqdS849suCzSQ" |
+
+Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa App when the user taps the ```Skills``` menu. These images contain the thumbnail icons of the various Alexa Skills that are available.
 
 # Milestone 3 Planning
 https://trello.com/b/hllck0Nz/echo-dot-milestone-3-kanban
