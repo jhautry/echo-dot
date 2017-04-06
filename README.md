@@ -417,7 +417,7 @@ See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/p
 
 *Components Tested*: Firmware SendRequest
 
-*Purpose*: Determine if any default apps transmit data securely during normal usage.
+*Purpose*: To determine if any default apps transmit data securely during normal usage.
 
 *Conducted*: nmap was used to find open ports when apps are running
 
@@ -467,6 +467,18 @@ PORT     STATE SERVICE VERSION
 ## User Story 2 Realization
 
 User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's default features and IoT capabilities. The Echo Dot registration process is also investigated. We have found that while most traffic coming in or out of the Alexa web panel is encrypted using TLS v1.2, the panel uses cookies and images which are not encrypted. <br><br>
+
+**Test: Echo Dot Registration network analysis**
+
+*Components Tested*: Backend WebPanel
+
+*Purpose*: To determine if network traffic to and from the Alexa web panel is transmitted securely during the Echo Dot registration process.
+
+*Conducted*: Using dumpcap on Kali Linux to capture traffic to and from the Alexa web panel. Wireshark was used to analyze the network traffic.
+
+*Results*: Network traffic to and from the Alexa web panel login page at ```https://alexa.amazon.com``` is encrypted with TLSv1.2. However, the Alexa web panel home page becomes ```http://alexa.amazon.com``` and some images are not encrypted.
+
+See: [register-echodot.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/register-echodot.pcapng)
 
 ---
 **Test: Echo Dot Setup Mode network analysis**
