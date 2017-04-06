@@ -492,7 +492,7 @@ The following connections from the Echo Dot were observed during registration:
 
 *Components Tested*: Firmware SendRequest
 
-*Purpose*: Determine if any default services transmit data securely during setup mode.
+*Purpose*: To determine if any default services transmit data securely during setup mode.
 
 *Conducted*: nmap was used to find open ports when services are running
 
@@ -554,7 +554,7 @@ User Story 3 focuses on gaining a fundamental understanding of the Alexa App's S
 
 *Components Tested*: Backend ExecuteRequest & AppPanel
 
-*Purpose*: Determine if the Alexa App transmits data securely.
+*Purpose*: To determine if the Alexa App transmits data securely.
 
 *Conducted*: DWall running on the WiFi Pineapple was set to listen for outgoing connections from the Alexa App.
 
@@ -572,6 +572,18 @@ The following cookie containing a session token was found:
 | 172.16.42.216 | csrf=-596473391; session-id-time=2082787201l; session-token="zj1u6jHoFSW/IKiqqjg5oA7Pq6uetskaezQDXSOK44gc2ArEbaAhzMg5bL5JSwlONVD8MYB/HCT88//NsZj2rzh3bJh4u9vYEjdJ2FVOMpwqZiWEn5JUXB8TGWAr8q5rkXoXQc9aIN7erfLzFfF5LIz0xDya8chmCyCp438fY2B7Uxd7a6Zwi5xtvCcfqdDCzZP3W2A9ud8="; session-id=135-0434014-3121322; ubid-main=168-7802293-2301129; x-main="qwLIvaKNbaFe0EeqVW3DYH38WVbg@ipOYhoSuZtoYC0Y8RFqcVJQqdS849suCzSQ" |
 
 Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa App when the user taps the ```Skills``` menu. These images contain the thumbnail icons of the various Alexa Skills that are available.
+
+---
+
+**Test: Alexa Web Panel Session Hijack attack**
+
+*Components Tested*: Backend ExecuteRequest & AppPanel
+
+*Purpose*: To determine if the Alexa web panel is vulnerable to session hijacking.
+
+*Conducted*: Using Cookie Cadger on Kali Linux to detect, intercept, and replay insecure HTTP GET requests and session cookies into the browser. 
+
+*Results*: No recgonized session cookies were captured by Cookie Cadger.
 
 # Milestone 3 Planning
 https://trello.com/b/hllck0Nz/echo-dot-milestone-3-kanban
