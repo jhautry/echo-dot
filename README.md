@@ -69,6 +69,7 @@ Acceptance Criteria:
 Acceptance Criteria:
 * Pentest the default Echo Dot features for vulnerabilities.
 * Pentest the Echo Dot's IoT capabilities.
+* Pentest the Echo Dot and Alexa Voice Remote's bluetooth functionalities
 * Identify and outline any user credentials stored on the Echo Dot.
 * Determine if identified user credentials are stored securely (i.e. encrypted).
 * Determine if confidential network traffic to and from the Echo Dot is transmitted securely  (i.e. encrypted).
