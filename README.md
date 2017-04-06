@@ -474,11 +474,18 @@ User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's de
 
 *Purpose*: To determine if network traffic to and from the Alexa web panel is transmitted securely during the Echo Dot registration process.
 
-*Conducted*: Using dumpcap on Kali Linux to capture traffic to and from the Alexa web panel. Wireshark was used to analyze the network traffic.
+*Conducted*: Using dumpcap on Kali Linux to capture traffic to and from the Alexa web panel. Wireshark was used to analyze the network traffic. DWall on the WiFi Pineapple was also set to listen for any connections from the Echo Dot during the registration process.
 
 *Results*: Network traffic to and from the Alexa web panel login page at ```https://alexa.amazon.com``` is encrypted with TLSv1.2. However, the Alexa web panel home page becomes ```http://alexa.amazon.com``` and some images are not encrypted.
 
 See: [register-echodot.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-captures/register-echodot.pcapng)
+
+The following connections from the Echo Dot were observed during registration:
+
+| Client | URL |
+|---------|------------|
+| 172.16.42.213 | http://spectrum.s3.amazonaws.com/kindle-wifi/wifistub-echo.html |
+| 172.16.42.213 | http://apresolve.spotify.com/?client=2:5:0:71778395393884299 |
 
 ---
 **Test: Echo Dot Setup Mode network analysis**
