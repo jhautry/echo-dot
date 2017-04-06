@@ -563,14 +563,14 @@ User Story 3 focuses on gaining a fundamental understanding of the Alexa App's S
 
 | Client | URL |
 |---------|------------|
-| 172.16.42.216 | http://alexa.amazon.com/manifest/pitangui.appcache |
+| 172.16.42.213 | http://alexa.amazon.com/manifest/pitangui.appcache |
 | 172.16.42.213 | http://spectrum.s3.amazonaws.com/kindle-wifi/wifistub-echo.html |
 
 The following cookie containing a session token was found:
 
 | Client | Cookie |
 |---------|------------|
-| 172.16.42.216 | csrf=-596473391; session-id-time=2082787201l; session-token="zj1u6jHoFSW/IKiqqjg5oA7Pq6uetskaezQDXSOK44gc2ArEbaAhzMg5bL5JSwlONVD8MYB/HCT88//NsZj2rzh3bJh4u9vYEjdJ2FVOMpwqZiWEn5JUXB8TGWAr8q5rkXoXQc9aIN7erfLzFfF5LIz0xDya8chmCyCp438fY2B7Uxd7a6Zwi5xtvCcfqdDCzZP3W2A9ud8="; session-id=135-0434014-3121322; ubid-main=168-7802293-2301129; x-main="qwLIvaKNbaFe0EeqVW3DYH38WVbg@ipOYhoSuZtoYC0Y8RFqcVJQqdS849suCzSQ" |
+| 172.16.42.213 | csrf=-596473391; session-id-time=2082787201l; session-token="zj1u6jHoFSW/IKiqqjg5oA7Pq6uetskaezQDXSOK44gc2ArEbaAhzMg5bL5JSwlONVD8MYB/HCT88//NsZj2rzh3bJh4u9vYEjdJ2FVOMpwqZiWEn5JUXB8TGWAr8q5rkXoXQc9aIN7erfLzFfF5LIz0xDya8chmCyCp438fY2B7Uxd7a6Zwi5xtvCcfqdDCzZP3W2A9ud8="; session-id=135-0434014-3121322; ubid-main=168-7802293-2301129; x-main="qwLIvaKNbaFe0EeqVW3DYH38WVbg@ipOYhoSuZtoYC0Y8RFqcVJQqdS849suCzSQ" |
 
 Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa App when the user taps the ```Skills``` menu. These images contain the thumbnail icons of the various Alexa Skills that are available.
 
