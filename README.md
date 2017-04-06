@@ -466,7 +466,7 @@ PORT     STATE SERVICE VERSION
 
 ## User Story 2 Realization
 
-User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's default features and IoT capabilities. <br><br>
+User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's default features and IoT capabilities. The Echo Dot registration process is also investigated. We have found that while most traffic coming in or out of the Alexa web panel is encrypted using TLS v1.2, the panel uses cookies and images which are not encrypted. <br><br>
 
 ---
 **Test: Echo Dot Setup Mode network analysis**
