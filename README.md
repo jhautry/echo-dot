@@ -42,9 +42,11 @@ Timeline last updated: 3/9/2017
 | **M2** Create Presentation Slides | 3/23 | 4/6 | 2 Weeks|
 |**Milestone 2 Due** | 4/3 | 4/3 | **DUE** |
 |**Milestone 2 Presentations** | 4/6 | 4/6 | **DUE** |
-|Write Final Report | 4/6 | 4/27 | 3 Weeks|
-|Milestone 3 Due | TBA |  |  |
-|Final Presentations | TBA |  |  |
+|**M3** Acivity Diagrams US4 & US5 | 4/6 | 5/4 | 4 Weeks|
+|**M3** User Story Realization US4 & US5 | 4/6 | 5/4 | 4 Weeks|
+|**M3** Write Final Report | 4/6 | 5/4 | 4 Weeks|
+|**Milestone 3 Due** | 5/4 |  | **DUE** |
+|**Final Presentations** | 5/4 |  | **DUE** |
 
 # Project-oriented Risk List
 |Risk name (value)  | Impact     | Likelihood | Description |
