@@ -365,6 +365,10 @@ The Echo Dot Registration Process
 ### User Story 3 Activity Diagram
 Enabling an Alexa Skill for use on the Echo Dot
 ![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
+### User Story 4 Activity Diagram
+goes here //NEEDS WORK
+### User Story 5 Activity Diagram
+goes here //NEEDS WORK
 
 # User Story Realization
 <br><br>
@@ -590,7 +594,6 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 # Milestone 3 Planning
 https://trello.com/b/hllck0Nz/echo-dot-milestone-3-kanban
-
 
 # Team Members
 * James Autry - jhautry
