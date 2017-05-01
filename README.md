@@ -592,8 +592,32 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 *Results*: No recgonized session cookies were captured by Cookie Cadger.
 
-# Milestone 3 Planning
-https://trello.com/b/hllck0Nz/echo-dot-milestone-3-kanban
+## User Story 4 Realization
+
+**Test:**
+
+*Components Tested*: 
+
+*Purpose*: 
+
+*Conducted*:
+
+*Results*: 
+
+## User Story 5 Realization
+
+**Test:**
+
+*Components Tested*: 
+
+*Purpose*: 
+
+*Conducted*:
+
+*Results*: 
+
+# Final Product
+link here
 
 # Team Members
 * James Autry - jhautry
