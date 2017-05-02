@@ -606,15 +606,130 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 ## User Story 5 Realization
 
-**Test:**
+**Test:** Attempt to root the Echo Dot v2
 
-*Components Tested*: 
+*Components Tested*: Subsystem Firmware Update
 
-*Purpose*: 
+*Purpose*: To determine if the Echo Dot v2 could be rooted at this time.
 
-*Conducted*:
+*Conducted*: Using MediaTek Smart Phone Flash Tools (SPFT) v5.1644, v5.1708, and v5.1712, and MTK (MediaTek) USB Driver Downloads to recognize, and attempt to root the software.  Scatter files to attempt a “readback” of data from the Echo Dot v2 to create a proper scatter file.
 
-*Results*: 
+*Results*: Overall, the Echo Dot v2 was not able to be rooted using SPFT because the SoC MT8163 required scatter file (partition table for rooting) could not be found or generated.
+
+*Preface*: Blog author ダニエル on Medium.com had out some important tips for rooting the Echo Dot v2 in his blog post entitled [Exploring the Amazon Echo Dot, Part 2: Into MediaTek utility hell](https://medium.com/@micaksica/exploring-the-amazon-echo-dot-part-2-into-mediatek-utility-hell-b452f62e5e87).  We used his strategies to attempt rooting since our team is new to the Android rooting process.
+
+Our strategy was to use third party MediaTek rooting tools to attempt to root the Echo Dot v2.  MediaTek device drivers were also required to recognize the Echo Dot v2.  Here is a look at the SPFT interface:
+
+![SPFT Interface](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/SPFT%20Main.jpg)
+
+A guess-and-check approach led to a working tool and driver combo of:
+* SP Flash Tool v5.1708
+* MT6577 USB VCOM Drivers
+
+Other versions of SPFT and the MT VCOM drivers failed to produce any quality results.  
+
+![Failures](https://github.com/jhautry/echo-dot/blob/master/images/Failures.jpg)
+
+This is because when the Echo Dot v2 is connected to PC via USB, the MediaTek Preloader is only recognized for less than two seconds before Alexa enters setup mode.  Halting or stalling setup mode was not possible using any button combination.  Only the above software and driver combination was able to automatically halt the Echo Dot startup process.
+
+Inside the SPFT software, a scatter file must be selected that aligns with the SoC contained within the hardware you wish to root.  A scatter file is a partition table that is used during the rooting process.  It can be created from *rooted devices* by using third-party tools, or by copying ```/proc/mtd``` to obtain block sizes for the partitions.  In an attempt to get the software working, a few alternative scatter files were used as test runs.  Here is the example scatter file for MediaTek SoC MT6575 that was used during testing:
+```
+PRELOADER 0x0
+{
+}
+DSP_BL 0x40000
+{
+}
+__NODL_NVRAM 0x100000
+{
+}
+__NODL_SECCFG 0x400000
+{
+}
+UBOOT 0x420000
+{
+}
+BOOTIMG 0x480000
+{
+}
+RECOVERY 0x980000
+{
+}
+SEC_RO 0xe80000
+{
+}
+__NODL_MISC 0xfa0000
+{
+}
+LOGO 0x1000000
+{
+}
+__NODL_EXPDB 0x1300000
+{
+}
+ANDROID 0x13a0000
+{
+}
+__NODL_CACHE 0x13aa0000
+{
+}
+USRDATA 0x176a0000
+{
+}
+__NODL_BMTPOOL 0xFFFF0050
+{
+}
+```
+Using the "Readback" function of SPFT, we attempted to rip the software from the Echo Dot.  However, we could not advance because using the MT6575 scatter file caused a "Chip type not match!" error.  The software actually stopped Alexa from booting up into setup mode.  If we had the correct scatter file, we would be on our way to rooting.  This is further than ダニエル has progressed during his exploration.
+
+![Chip Type Not Match](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Chip%20Type%20not%20Match.jpg)
+
+In an attempt to obtain a MT8163 scatter file, we followed through to look for the ASUS Iconia One 10 Tablet's (B3-A30) MT8163 SoC scatter file.  ASUS product support led to the B3-A30 operating system update files at:
+https://www.acer.com/ac/en/US/content/support-product/6839?b=1
+
+Within the B3-A30 OS update files, we obtained ```scatter.txt``` which was not readable by the SPFT software:
+```
+preloader 0x0
+pgpt 0x0
+proinfo 0x80000
+nvram 0x380000
+protect1 0x880000
+protect2 0x1280000
+persist 0x1c80000
+seccfg 0x4c80000
+lk 0x4cc0000
+boot 0x4d20000
+recovery 0x5d20000
+secro 0x6d20000
+para 0x7320000
+logo 0x73a0000
+expdb 0x7ba0000
+frp 0x85a0000
+tee1 0x86a0000
+tee2 0x8ba0000
+kb 0x90a0000
+dkb 0x92a0000
+metadata 0x94a0000
+system 0xb800000
+cache 0x10b800000
+userdata 0x12b800000
+flashinfo 0xFFFF0084
+sgpt 0xFFFF0004
+```
+This scatter file is in a different format than the previous scatter files.  It caused an error in SPFT:
+
+![Bad Scatter File](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Bad%20Scatter%20File.jpg)
+
+We attempted to format ```scatter.txt``` into the correct format, but had no success.  Placing braces after each partition did not solve the problem.  We believe this ```scatter.txt``` to be used for update purposes only and, therefore, not useful for a fresh Android OS install.
+
+![Scatter File Crash](https://github.com/jhautry/echo-dot/blob/master/images/Scatter%20Error.jpg)
+
+Further Google searches led to no publicly available scatter files for a MT8163 SoC.  
+
+A last attempt at finding MediaTek documentation led to a 9,975 page Chinese PDF.  We are not fluent in Chinese and failed to comprehend much within the PDF.
+**Note: QUESTIONABLE LINK -- Click at own risk -- Recommended airgapped PC**: https://yadi.sk/d/X0CLyxlduGccX
+
+In conclusion: until a correct scatter file for SoC MT8163 is obtained, this method of rooting is not possible.
 
 # Final Product
 link here
