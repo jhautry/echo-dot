@@ -366,7 +366,8 @@ The Echo Dot Registration Process
 Enabling an Alexa Skill for use on the Echo Dot
 ![Third User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US3%20Activity%20Diagram%20v1.png)
 ### User Story 4 Activity Diagram
-goes here //NEEDS WORK
+Developing an Alexa Skill using the Amazon Skills API
+![Fourth User Story Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/US4%20Activity%20Diagram%20v1.png)
 ### User Story 5 Activity Diagram
 goes here //NEEDS WORK
 
