@@ -610,13 +610,13 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 *Components Tested*: Subsystem Firmware Update
 
-*Purpose*: To determine if the Echo Dot v2 could be rooted at this time.
+*Purpose*: To determine if the Echo Dot v2 can be rooted at this time.
 
 *Conducted*: Using MediaTek Smart Phone Flash Tools (SPFT) v5.1644, v5.1708, and v5.1712, and MTK (MediaTek) USB Driver Downloads to recognize, and attempt to root the software.  Scatter files to attempt a “readback” of data from the Echo Dot v2 to create a proper scatter file.
 
-*Results*: Overall, the Echo Dot v2 was not able to be rooted using SPFT because the SoC MT8163 required scatter file (partition table for rooting) could not be found or generated.
-
 *Preface*: Blog author ダニエル on Medium.com had out some important tips for rooting the Echo Dot v2 in his blog post entitled [Exploring the Amazon Echo Dot, Part 2: Into MediaTek utility hell](https://medium.com/@micaksica/exploring-the-amazon-echo-dot-part-2-into-mediatek-utility-hell-b452f62e5e87).  We used his strategies to attempt rooting since our team is new to the Android rooting process.
+
+*Results*: Overall, the Echo Dot v2 was not able to be rooted using SPFT because the SoC MT8163 required scatter file (partition table for rooting) could not be found or generated.
 
 Our strategy was to use third party MediaTek rooting tools to attempt to root the Echo Dot v2.  MediaTek device drivers were also required to recognize the Echo Dot v2.  Here is a look at the SPFT interface:
 
