@@ -934,7 +934,7 @@ We attempted to format ```scatter.txt``` into the correct format, but had no suc
 Further Google searches led to no publicly available scatter files for a MT8163 SoC.  
 
 A last attempt at finding MediaTek documentation led to a 9,975 page Chinese PDF.  We are not fluent in Chinese and failed to comprehend much within the PDF.
-**Note: QUESTIONABLE LINK -- Browse at own risk (copy into browser): **: https://yadi.sk/d/X0CLyxlduGccX
+**Note: QUESTIONABLE LINK -- Browse at own risk (copy into browser): ** https://yadi.sk/d/X0CLyxlduGccX
 
 In conclusion: until a correct scatter file for SoC MT8163 is obtained, this method of rooting is not possible.
 
