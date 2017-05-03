@@ -809,6 +809,12 @@ module.exports = template;
 
 *Results*: All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
 
+Amazon requires developers to provide testing instructions for the certification team, as shown in this dialog box:
+![Certification](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Certification.png)
+
+Developers are also required to answer a variety of questions concerning the behavior of their Alexa Skill and if the skill collects personal information:
+![Privacy](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Privacy.png)
+
 //NEEDS WORK
 
 ## User Story 5 Realization
