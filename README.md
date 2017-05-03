@@ -598,15 +598,33 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 *Conducted*: Using the Alexa Skills Kit (ASK) to see if the API potentially supports coding a malicious skill.
 
-*Preface*: The languages that the ASK oficially supports are Node.js and Java.
-The Skills Kit SDK for the Node.js can be found at: https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs
-The Skills Kit SDK for Java can be found at: https://github.com/amzn/alexa-skills-kit-java/
+*Preface*: Amazon has created an Alexa App module to make it easier for developers to get starting coding their own Alexa Skills. This module can be found at: https://github.com/alexa-js/alexa-app
 
-The following types of skills can be created using the ASK: Custom Skills, Smart Home Skills, and Flash Briefing Skills.
+The alexa-app module parses HTTP JSON requests from the Alexa platform and builds the JSON response that consumed by an Alexa-compatible device, such as the Echo.
 
-Amazon provides an AWS Lambda service for deploying Alexa Skills in the cloud. AWS Lambda is typically hosted on an Amazon Machine Image (AMI) running on Amazon's EC2 cloud platform. Developers of custom Alexa Skills also have the option to use their own cloud infrastructure to deploy the skill. Amazon has also created an Alexa App to make it easier for developers to get starting coding their own Alexa Skills. This app can be found at: https://github.com/alexa-js/alexa-app
+Amazon skills that use the alexa-app module have a built-in `handler` method to handle calls from AWS Lambda. The developer needs to ensure that the Handler is set to `index.handler`, which is the default value.
+
+```
+var alexa = require("alexa-app");
+var app = new alexa.app("sample");
+
+app.intent("number", {
+    "slots": { "number": "AMAZON.NUMBER" },
+    "utterances": ["say the number {-|number}"]
+  },
+  function(request, response) {
+    var number = request.slot("number");
+    response.say("You asked for the number " + number);
+  }
+);
+
+// connect the alexa-app to AWS Lambda
+exports.handler = app.lambda();
+```
 
 *Results*: All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These tests include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
+
+Amazon provides an AWS Lambda service for deploying Alexa Skills in the cloud. AWS Lambda is typically hosted on an Amazon Machine Image (AMI) running on Amazon's EC2 cloud platform. Developers of custom Alexa Skills also have the option to use their own cloud infrastructure to deploy the skill. 
 
 //NEEDS WORK
 
