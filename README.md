@@ -12,9 +12,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
 * Plan a thorough investigation into the security of the Echo Dot
 * Test the following strategies:
   * Intercept the Echo Dot's Wi-Fi communications and execute Man-in-the-Middle based attacks
-  * Spoof an Alexa Voice Remote signal
   * Attempt to be the first known group to root an Echo Dot v2 
-  * If rooting is successful, attempt to develop a proof-of-concept firmware exploit
   * Find a vulnerability that could lead to compromise of the Echo Dot through the Skills API
   * Develop secure usage practices by finding the threshold decibel levels required to converse with Alexa
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
@@ -70,8 +68,6 @@ Acceptance Criteria:
 
 Acceptance Criteria:
 * Pentest the default Echo Dot features for vulnerabilities.
-* Pentest the Echo Dot's IoT capabilities.
-* Pentest the Echo Dot and Alexa Voice Remote's bluetooth functionalities
 * Identify and outline any user credentials stored on the Echo Dot.
 * Determine if identified user credentials are stored securely (i.e. encrypted).
 * Determine if confidential network traffic to and from the Echo Dot is transmitted securely  (i.e. encrypted).
@@ -117,7 +113,6 @@ Acceptance Criteria:
 |Resource  | Dr. Hale needed? | Investigating Team member | Description |
 |-------------------|---------|---------------------------|-------------|
 |Another Echo Dot v2| Yes | All | Having another Echo Dot v2 will allow more team members to work independently on the project  |
-|Alexa Voice Remote| Yes | All | The Bluetooth Alexa Voice Remote may be vulnerable and is worthy of investigation  |
 |WiFi Pineapple| Yes | James | For testing man-in-the-middle attack possibilities |
 |Android Debuggers| No | Matt | Look into Android debuggers |
 |Android Rooting| No | Matt | Look further into rooting the Echo Dot v2|
