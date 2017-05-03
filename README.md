@@ -891,7 +891,7 @@ Using the "Readback" function of SPFT, we attempted to rip the software from the
 
 ![Chip Type Not Match](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Chip%20Type%20not%20Match.jpg)
 
-In an attempt to obtain a MT8163 scatter file, we followed through to look for the ASUS Iconia One 10 Tablet's (B3-A30) MT8163 SoC scatter file.  ASUS product support led to the B3-A30 operating system update files at:
+In an attempt to obtain a MT8163 scatter file, we followed through to look for the ACER Iconia One 10 Tablet's (B3-A30) MT8163 SoC scatter file.  ACER product support led to the B3-A30 operating system update files at:
 https://www.acer.com/ac/en/US/content/support-product/6839?b=1
 
 Within the B3-A30 OS update files, we obtained ```scatter.txt``` which was not readable by the SPFT software:
@@ -934,7 +934,7 @@ We attempted to format ```scatter.txt``` into the correct format, but had no suc
 Further Google searches led to no publicly available scatter files for a MT8163 SoC.  
 
 A last attempt at finding MediaTek documentation led to a 9,975 page Chinese PDF.  We are not fluent in Chinese and failed to comprehend much within the PDF.
-**Note: QUESTIONABLE LINK -- Click at own risk -- Recommended airgapped PC**: https://yadi.sk/d/X0CLyxlduGccX
+**Note: QUESTIONABLE LINK -- Browse at own risk (copy into browser): **: https://yadi.sk/d/X0CLyxlduGccX
 
 In conclusion: until a correct scatter file for SoC MT8163 is obtained, this method of rooting is not possible.
 
