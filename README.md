@@ -598,33 +598,216 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 *Conducted*: Using the Alexa Skills Kit (ASK) to see if the API potentially supports coding a malicious skill.
 
-*Preface*: Amazon has created an Alexa App module to make it easier for developers to get starting coding their own Alexa Skills. This module can be found at: https://github.com/alexa-js/alexa-app
+*Preface*: Amazon provides an AWS Lambda service for deploying Alexa Skills in the cloud. AWS Lambda is typically hosted on an Amazon Machine Image (AMI) running on Amazon's EC2 cloud platform. Developers of custom Alexa Skills also have the option to use their own cloud infrastructure to deploy the skill.
+
+Amazon has created an Alexa App module to make it easier for developers to get starting coding their own Alexa Skills. This module can be found at: https://github.com/alexa-js/alexa-app
 
 The alexa-app module parses HTTP JSON requests from the Alexa platform and builds the JSON response that consumed by an Alexa-compatible device, such as the Echo.
 
-Amazon skills that use the alexa-app module have a built-in `handler` method to handle calls from AWS Lambda. The developer needs to ensure that the Handler is set to `index.handler`, which is the default value.
+This examples shows how the alexa-app module can be used to build an Alexa Skill:
 
 ```
 var alexa = require("alexa-app");
-var app = new alexa.app("sample");
+var template = require("./template.js");
 
-app.intent("number", {
-    "slots": { "number": "AMAZON.NUMBER" },
-    "utterances": ["say the number {-|number}"]
+var app = new alexa.app("test");
+
+app.dictionary = {
+  "names": ["Bob", "Jack", "Matt", "Mary", "Jane", "Bill"]
+};
+
+app.launch(function(request, response) {
+  response.say("App launched!");
+});
+
+app.intent("sampleIntent", {
+    "slots": { "NAME": "LITERAL", "AGE": "NUMBER" },
+    "utterances": ["my {name is|name's} {names|NAME} and {I am|I'm} {1-100|AGE}{ years old|}"]
   },
   function(request, response) {
-    var number = request.slot("number");
-    response.say("You asked for the number " + number);
+    setTimeout(function() {
+      response.say("After timeout!").say(" test ").reprompt("Reprompt");
+      response.send();
+    }, 1000);
+    // We are async!
+    return false;
   }
 );
 
-// connect the alexa-app to AWS Lambda
-exports.handler = app.lambda();
+app.intent("errorIntent", function(request, response) {
+  response.say(someVariableThatDoesntExist);
+});
+
+// output the schema
+console.log("\n\nSCHEMA:\n\n" + app.schema() + "\n\n");
+// output sample utterances
+console.log("\n\nUTTERANCES:\n\n" + app.utterances() + "\n\n");
+
+// test pre() and post() functions
+app.pre = function(request, response, type) {
+  response.say("This part of the output is from pre(). ");
+};
+app.post = function(request, response, type, exception) {
+  if (exception) {
+    response.clear().say("An error occured: " + exception).send();
+  }
+};
+
+// error example
+app.request(template.errorIntent)
+  .then(function(response) {
+    console.log(JSON.stringify(response, null, 3));
+  });
+
+// async example
+app.request(template.intent)
+  .then(function(response) {
+    console.log(JSON.stringify(response, null, 3));
+  });
+
+// synchronous example
+app.request(template.launch)
+  .then(function(response) {
+    console.log(JSON.stringify(response, null, 3));
+  });
+
+// error example
+app.messages.NO_INTENT_FOUND = "Why you called dat intent? I don't know bout dat";
+app.request(template.missingIntent)
+  .then(function(response) {
+    console.log(JSON.stringify(response, null, 3));
+  });
+
+// error handler example
+app.error = function(e, request, response) {
+  response.say("I captured the exception! It was: " + e.message);
+};
+app.request(template.errorIntent)
+  .then(function(response) {
+    console.log(JSON.stringify(response, null, 3));
+  });
+
+```
+The content of `template.js` shows how skills built with the alex-app module communicate requests to Amazon:
+```
+var template = {};
+// LaunchRequest template
+template.launch = {
+  "version": "1.0",
+  "session": {
+    "new": true,
+    "sessionId": "amzn1.echo-api.session.abeee1a7-aee0-41e6-8192-e6faaed9f5ef",
+    "attributes": {},
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.000000-d0ed-0000-ad00-000000d00ebe"
+    },
+    "user": {
+      "userId": "amzn1.account.AM3B227HF3FAM1B261HK7FFM3A2"
+    }
+  },
+  "request": {
+    "type": "LaunchRequest",
+    "requestId": "amzn1.echo-api.request.9cdaa4db-f20e-4c58-8d01-c75322d6c423"
+  }
+};
+// IntentRequest template
+template.intent = {
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.abeee1a7-aee0-41e6-8192-e6faaed9f5ef",
+    "attributes": {},
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.000000-d0ed-0000-ad00-000000d00ebe"
+    },
+    "user": {
+      "userId": "amzn1.account.AM3B227HF3FAM1B261HK7FFM3A2"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.6919844a-733e-4e89-893a-fdcb77e2ef0d",
+    "intent": {
+      "name": "sampleIntent",
+      "slots": {
+        "NAME": {
+          "name": "NAME",
+          "value": "Matt"
+        }
+      }
+    }
+  }
+};
+// errorIntent template
+template.errorIntent = {
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.abeee1a7-aee0-41e6-8192-e6faaed9f5ef",
+    "attributes": {},
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.000000-d0ed-0000-ad00-000000d00ebe"
+    },
+    "user": {
+      "userId": "amzn1.account.AM3B227HF3FAM1B261HK7FFM3A2"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.6919844a-733e-4e89-893a-fdcb77e2ef0d",
+    "intent": {
+      "name": "errorIntent",
+      "slots": {}
+    }
+  }
+};
+// missingIntent template
+template.missingIntent = {
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.abeee1a7-aee0-41e6-8192-e6faaed9f5ef",
+    "attributes": {},
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.000000-d0ed-0000-ad00-000000d00ebe"
+    },
+    "user": {
+      "userId": "amzn1.account.AM3B227HF3FAM1B261HK7FFM3A2"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.6919844a-733e-4e89-893a-fdcb77e2ef0d",
+    "intent": {
+      "name": "missingIntent",
+      "slots": {}
+    }
+  }
+};
+// SessionEndedRequest template
+template.session_end = {
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.abeee1a7-aee0-41e6-8192-e6faaed9f5ef",
+    "attributes": {},
+    "application": {
+      "applicationId": "amzn1.echo-sdk-ams.app.000000-d0ed-0000-ad00-000000d00ebe"
+    },
+    "user": {
+      "userId": "amzn1.account.AM3B227HF3FAM1B261HK7FFM3A2"
+    }
+  },
+  "request": {
+    "type": "SessionEndedRequest",
+    "requestId": "amzn1.echo-api.request.d8c37cd6-0e1c-458e-8877-5bb4160bf1e1",
+    "reason": "USER_INITIATED"
+  }
+};
+module.exports = template;
 ```
 
-*Results*: All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These tests include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
-
-Amazon provides an AWS Lambda service for deploying Alexa Skills in the cloud. AWS Lambda is typically hosted on an Amazon Machine Image (AMI) running on Amazon's EC2 cloud platform. Developers of custom Alexa Skills also have the option to use their own cloud infrastructure to deploy the skill. 
+*Results*: All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
 
 //NEEDS WORK
 
