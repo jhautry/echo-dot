@@ -595,15 +595,25 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 ## User Story 4 Realization
 
-**Test:**
+**Test:** Alexa Skills API Assessment
 
-*Components Tested*: 
+*Components Tested*: Subsystem Amazon Alexa Database
 
-*Purpose*: 
+*Purpose*: To determine if the Alexa Skills API can potentially be used to program a malicious skill.
 
-*Conducted*:
+*Conducted*: Using the Alexa Skills Kit (ASK) to see if the API potentially supports coding a malicious skill.
 
-*Results*: 
+*Preface*: The languages that the ASK oficially supports are Node.js and Java.
+The Skills Kit SDK for the Node.js can be found at: https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs
+The Skills Kit SDK for Java can be found at: https://github.com/amzn/alexa-skills-kit-java/
+
+The following types of skills can be created using the ASK: Custom Skills, Smart Home Skills, and Flash Briefing Skills.
+
+Amazon provides an AWS Lambda service for deploying Alexa Skills in the cloud. AWS Lambda is typically hosted on an Amazon Machine Image (AMI) running on Amazon's EC2 cloud platform. Developers of custom Alexa Skills also have the option to use their own cloud infrastructure to deploy the skill. Amazon has also created an Alexa App to make it easier for developers to get starting coding their own Alexa Skills. This app can be found at: https://github.com/alexa-js/alexa-app
+
+*Results*: All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These tests include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
+
+//NEEDS WORK
 
 ## User Story 5 Realization
 
