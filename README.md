@@ -1559,6 +1559,10 @@ Download the PDF to have clickable links.
 
 [Download Link](https://github.com/jhautry/echo-dot/raw/master/Amazon%20Echo%20Dot%20v2%20Penetration%20Testing%20Final%20Summary.pdf)
 
+# Final Presentation
+
+[View Here](https://docs.google.com/presentation/d/1T-nrLgRhrVournIb1uJ2j4J8HS_IRZcihBFiq0gJchs/edit?usp=sharing)
+
 # Team Members
 * James Autry - jhautry
 * Tim Gekas - tgekas
