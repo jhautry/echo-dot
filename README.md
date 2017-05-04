@@ -1243,7 +1243,7 @@ In conclusion: Amazon only allows a limited number of permissions for use by Ale
 
 *Preface*: Blog author ダニエル on Medium.com had out some important tips for rooting the Echo Dot v2 in his blog post entitled [Exploring the Amazon Echo Dot, Part 2: Into MediaTek utility hell](https://medium.com/@micaksica/exploring-the-amazon-echo-dot-part-2-into-mediatek-utility-hell-b452f62e5e87).  We used his strategies to attempt rooting since our team is new to the Android rooting process.
 
-*Results*: Overall, the Echo Dot v2 was not able to be rooted using SPFT because the SoC MT8163 required scatter file (partition table for rooting) could not be found or generated.
+*Results*: Overall, the Echo Dot v2 was not able to be rooted using SPFT because the SoC MT8163 required scatter file could not be found or generated.  Scatter files are file used to describe the loads of regions in a specific android device running MediaTek's ARM architecture.
 
 Our strategy was to use third party MediaTek rooting tools to attempt to root the Echo Dot v2.  MediaTek device drivers were also required to recognize the Echo Dot v2.  Here is a look at the SPFT interface:
 
