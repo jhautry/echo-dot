@@ -1552,7 +1552,9 @@ The Echo Dot v2 has a bootloader that is locked down.  There is no access to com
 The Echo Dot v2 uses MediaTek hardware that includes a low-level USB preloader.  This preloader can be used with MediaTek Flashing Tools to flash different firmware. We attempted to use the MediaTek Smart Phone Flash Tools to rip the firmware to see what is going on inside, but failed because we did not have the proper scatter file.  Scatter files are partition specifications required for the flashing tools to execute. The Echo Dot requires a scatter file for the MT8163 V/B SoC.  A scatter file from another MT8163 needs to be ripped and applied to the Echo Dot v2.
 
 # Final Report
-link here
+
+[View Here](https://github.com/jhautry/echo-dot/blob/master/Amazon%20Echo%20Dot%20v2%20Penetration%20Testing%20Final%20Summary.pdf)
+[Download Link](https://github.com/jhautry/echo-dot/raw/master/Amazon%20Echo%20Dot%20v2%20Penetration%20Testing%20Final%20Summary.pdf)
 
 # Team Members
 * James Autry - jhautry
