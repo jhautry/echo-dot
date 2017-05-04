@@ -810,7 +810,7 @@ template.session_end = {
 module.exports = template;
 ```
 
-*Results*: All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
+*Results*: <a name="SkillCertification"></a>All Alexa Skills must pass Amazon's skill certification tests in order for the skill to be publicly available on the Amazon skills store. These include Alexa policy tests, security tests, functional tests, and voice interface and user experience tests.
 
 Amazon requires developers to provide testing instructions for the certification team, as shown in this dialog box:
 ![Certification](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Certification.png)
@@ -819,7 +819,7 @@ Developers are also required to answer a variety of questions concerning the beh
 ![Privacy](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Privacy.png)
 
 
-Alexa Skills currently have access to a limited number of permissions: Device Address, List Read, and List Write. These permissions are configured in the Amazon Developer Portal. Once configured, the customer is prompted with a permissions card in the Alexa app to consent to provide the information requested when they enable the skill.
+<a name="SkillPermissions"></a>Alexa Skills currently have access to a limited number of permissions: Device Address, List Read, and List Write. These permissions are configured in the Amazon Developer Portal. Once configured, the customer is prompted with a permissions card in the Alexa app to consent to provide the information requested when they enable the skill.
 ![Permissions](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/permissions.png)
 
 After consent is obtained, a launch request from Alexa to the developer's Skill includes a user object that contains a consent token and device ID.
@@ -1407,7 +1407,7 @@ Since all Alexa Skills are tested by the Amazon certification team before being 
 
 The Echo Dot v2 has a bootloader that is locked down.  There is no access to common Android rooting tools like Android Debugging Bridge (adb). Until Amazon releases the unlock files for the bootloader another method must be used.   
 
-The Echo Dot v2 uses MediaTek hardware that includes a low-level USB preloader.  This preloader can be used with MediaTek Flashing Tools to flash different firmware. We attempted to use the MediaTek Smart Phone Flash Tools to rip the firmware to see what is going on inside, but failed because we did not have the proper scatter file.  Scatter files are partition specifications required for the flashing tools to execute. The Echo Dot requires a scatter file for the MT8163 V/B SoC.  
+The Echo Dot v2 uses MediaTek hardware that includes a low-level USB preloader.  This preloader can be used with MediaTek Flashing Tools to flash different firmware. We attempted to use the MediaTek Smart Phone Flash Tools to rip the firmware to see what is going on inside, but failed because we did not have the proper scatter file.  Scatter files are partition specifications required for the flashing tools to execute. The Echo Dot requires a scatter file for the MT8163 V/B SoC.  A scatter file from another MT8163 needs to be ripped and applied to the Echo Dot v2.
 
 # Final Report
 link here
