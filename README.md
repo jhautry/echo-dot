@@ -966,6 +966,274 @@ The list management capabilities provide create, read, update, and delete (CRUD)
 | Create a new list item | POST | v2/householdlists/{listId}/items |
 | Delete a list item | DELETE | v2/householdlists/{listId}/items/{itemId} |
 
+* GetListsMetadata - Retrieves the Metadata for all customer Alexa lists.
+```
+GET: v2/householdlists/
+Authorization: Bearer auth_token_for_customer
+Content-Type: application/json
+```
+Response format:
+```
+HTTP 200 OK, on success
+{
+    "lists":
+    [
+        {
+            "listId": // list id (String)
+            "name": // list name (String)
+            "statusMap": [
+                { "status": "active" // (Enum) ,
+                  "href": // active list items URL },
+                { "status": "completed" // (Enum),
+                  "href": // completed list items URL }
+            ]
+        }
+    ]
+}
+
+HTTP 403 Forbidden, if customer authorization token is not valid/expired
+{
+    "message": "request is unauthorized"
+    "type": "Unauthorized"
+}
+
+HTTP 500 Internal Server Error, if Alexa encountered a server error
+{
+    "message": // error message (String)
+    "type": "InternalError"
+}
+```
+
+* GetList - retrieves a customer's Alexa list.
+```
+GET: v2/householdlists/{listId}/{status}
+where {listId} is customer's list id and {status} is "active" or "completed"
+
+Authorization: Bearer auth_token_for_customer
+Content-Type: application/json
+```
+Response format:
+```
+HTTP 200 OK, on success
+
+{
+    "listId": // list id (String)
+    "name": // list name (String)
+    // default page size today is 100 and cannot be controlled by the client
+    "items":
+    [
+	    {
+            "id": // item id (String, limit 50 characters)
+            "version": // item version (Positive integer)
+            "value": // item value (String, limit 256 characters)
+            "status": // item status (Enum: "active" or "completed")
+            "createdTime": // created time (ISO 8601 time format w/time zone)
+            "updatedTime": // updated time (ISO 8601 time format w/time zone)
+            "href": // URL to retrieve the item (String)
+         },
+         ...
+    ]
+    "links": {
+        "next": "v2/householdlists/{listId}/{status}?nextToken={nextToken}"
+    }
+}
+
+HTTP 400 Bad Request, if input is malformed
+{
+    "message": // (String) (e.g., "invalid list items status)"
+    "type": "InvalidInput"
+}
+
+HTTP 403 Forbidden, if a customer authorization token is not valid/expired
+{
+    "message": "request is unauthorized"
+    "type": "Unauthorized"
+}
+
+HTTP 404 Not Found, if the list is not found
+{
+    "message": "list not found"
+    "type": "ObjectNotFound"
+}
+
+HTTP 500 Internal Server Error, if Alexa encountered a server error
+{
+    "message": // error message (String)
+    "type": "InternalError"
+}
+```
+
+* GetListItem - Retrieves a single item within a list.
+```
+GET: v2/householdlists/{listId}/items/{itemId}
+where {listId} is customer's list id and {itemId} is the item id
+
+Authorization: Bearer auth_token_for_customer
+Content-Type: application/json
+```
+Response format:
+```
+HTTP 200 OK, on success
+
+{
+    "id": // item id (String)
+    "version": // item version when it was read (Positive integer)
+    "value": // item value (String)
+    "status": // item status (Enum: "active" or "completed")
+    "createdTime": // created time (ISO 8601 time format with time zone)
+    "updatedTime": // updated time (ISO 8601 time format with time zone)
+    "href": // URL to retrieve the item (String)
+}
+
+HTTP 403 Forbidden, if a customer authorization token is not valid/expired
+{
+    "message": "request is unauthorized"
+    "type": "Unauthorized"
+}
+
+HTTP 404 Not Found, if the list or list item is not found
+{
+    "message": // error message (String) (e.g., "item is not found")
+    "type": "ObjectNotFound"
+}
+
+HTTP 500 Internal Server Error, if Alexa encountered a server error
+{
+    "message": // error message (String)
+    "type": "InternalError"
+}
+```
+
+* UpdateListItem - Updates an Alexa list item after the list item has been updated through the skill.
+```
+PUT: v2/householdlists/{listId}/items/{itemId}
+where {listId} is customer's list id and {itemId} is the item id
+
+Authorization: Bearer auth_token_for_customer
+Content-Type: application/json
+
+{
+    "id": // item id (String)
+    "version": // item version when it was read (Positive integer)
+    "value": // updated item value (String, limit is 256 characters)
+    "status": // item status (Enum: "active" or "completed")
+}
+```
+Response format:
+```
+HTTP 200 OK, on success
+
+{
+    "id": // item id (String)
+    "version": // updated item version (Positive integer)
+    "value": // item value (String, limit is 256 characters)
+    "status": // item status (Enum: "active" or "completed")
+    "createdTime": // created time (ISO 8601 time format with time zone)
+    "updatedTime": // updated time (ISO 8601 time format with time zone)
+    "href": // URL to retrieve the item (String)
+}
+
+HTTP 403 Forbidden, if a customer authorization token is not valid, or has expired
+{
+    "message": "request is unauthorized"
+    "type": "Unauthorized"
+}
+
+HTTP 404 Not Found, if the list or list item is not found
+{
+    "message": // error message (String) (for example, "item is not found")
+    "type": "ObjectNotFound"
+}
+
+HTTP 409 Conflict, if the item versions mismatch
+{
+    "message": "item versions mismatch"
+    "type": "Conflict"
+}
+
+HTTP 500 Internal Server Error, if Alexa has encountered a server error
+{
+    "message": // error message (String)
+    "type": "InternalError"
+}
+```
+
+* CreateListItem - creates a new Alexa list item.
+```
+POST: v2/householdlists/{listId}/items
+
+Authorization: Bearer auth_token_for_customer
+Content-Type: application/json
+
+{
+    "value": // new item value (String, limit is 256 characters)
+    "status": // item status (Enum: "active" or "completed")
+}
+```
+Response format:
+```
+HTTP 201 OK, on success
+Location: v2/householdlists/{listid}/items/{itemId}
+
+{
+    "id": // item id (String)
+    "version": // item version (Positive integer)
+    "value": // item value (String, limit is 256 characters)
+    "status": // item status (Enum: "active" or "completed")
+    "createdTime": // created time (ISO 8601 time format with time zone)
+    "updatedTime": // updated time (ISO 8601 time format with time zone)
+    "href": // URL to retrieve the item (String)
+}
+
+HTTP 403 Forbidden, if a customer authorization token is not valid/expired
+{
+    "message": "request is unauthorized"
+    "type": "Unauthorized"
+}
+
+HTTP 404 Not Found, if the list is not found
+{
+    "message": "list is not found"
+    "type": "ObjectNotFound"
+}
+
+HTTP 500 Internal Server Error, if Alexa encountered a server error
+{
+    "message": // error message (String)
+    "type": "InternalError"
+}
+```
+
+* DeleteListItem - Deletes an Alexa list item.
+```
+DELETE: v2/householdlists/{listId}/items/{itemId}
+
+Authorization: Bearer auth_token_for_customer
+Content-Type: application/json
+```
+Response format:
+```
+HTTP 200 OK, on success
+
+HTTP 403 Forbidden, if a customer authorization token is not valid/expired
+{
+    "message": "request is unauthorized"
+    "type": "Unauthorized"
+}
+
+HTTP 404 Not Found, if the list or list item is not found
+{
+    "message": // error message (String)
+    "type": "ObjectNotFound"
+}
+
+HTTP 500 Internal Server Error, if Alexa encountered a server error
+{
+    "message": // error message (String)
+    "type": "InternalError"
+}
+```
+
 ## User Story 5 Realizations
 
 **Test:** <a name="US5SPFlashTool"></a>Attempt to root the Echo Dot v2
