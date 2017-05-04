@@ -14,7 +14,6 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
   * Intercept the Echo Dot's Wi-Fi communications and execute Man-in-the-Middle based attacks
   * Attempt to be the first known group to root an Echo Dot v2 
   * Find a vulnerability that could lead to compromise of the Echo Dot through the Skills API
-  * Develop secure usage practices by finding the threshold decibel levels required to converse with Alexa
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
 # Table of Contents
@@ -96,7 +95,7 @@ Acceptance Criteria:
 * Determine if identified user credentials are stored securely (i.e. encrypted).
 * Determine if confidential network traffic to and from the Echo Dot is transmitted securely  (i.e. encrypted).
 * Determine if there is an unsecure, remote method of communication to the Echo Dot that can be abused by malicious outsiders.
-* Identify safe placement practices for Echo Dots by finding the threshold decibel levels required to converse with Alexa.
+* Identify safe placement practices for Echo Dots.
 
 ---
 
@@ -584,6 +583,16 @@ PORT     STATE SERVICE    VERSION
 |_  Supported Methods: POST OPTIONS
 |_http-title: Site doesn't have a title (text/plain).
 ```
+
+**Test: Echo Dot Safe Usage Practices**
+
+*Components Tested*: Firmware SendRequest
+
+*Purpose*: To determine best usage practice and placement of Echo Dots.
+
+*Conducted*: Using multiple individuals speaking voice commands.
+
+*Results*: Alexa has no voice recognition.  Any individual who Alexa is able to hear can execute a verbal request.  An answering machine or speakerphone could possibly converse with Alexa.
 
 ---
 
