@@ -841,9 +841,50 @@ After consent is obtained, a launch request from Alexa to the developer's Skill 
 
 The device address permission has two options:
 * Get Country and Postal Code - Gets the country and postal code associated with a device specified by deviceId.
+
+Example Request:
+```
+Host: api.amazonalexa.com
+Accept: application/json
+Authorization: Bearer Atc|MQEWY...6fnLok 
+GET https://api.amazonalexa.com/v1/devices/{deviceId}/settings/address/countryAndPostalCode
+```
+Example Response:
+```
+Host: api.amazonalexa.com
+X-Amzn-RequestId: xxxx-xxx-xxx
+Content-Type: application/json
+{
+  "countryCode" : "US",
+  "postalCode" : "98109"
+}
+```
 * Get Address - Gets the full address associated with the device specified by deviceId.
 
+Example Request:
+```
+Host: api.amazonalexa.com
+Accept: application/json
+Authorization: Bearer Atc|MQEWY...6fnLok 
+GET https://api.amazonalexa.com/v1/devices/{deviceId}/settings/address
+```
+Example Response:
+```
+Host: api.amazonalexa.com
+X-Amzn-RequestId: xxxx-xxx-xxx
+Content-Type: application/json
 
+{
+  "stateOrRegion" : "WA",
+  "city" : "Seattle",
+  "countryCode" : "US",
+  "postalCode" : "98109",
+  "addressLine1" : "410 Terry Ave North",
+  "addressLine2" : "",
+  "addressLine3" : "aeiou",
+  "districtOrCounty" : ""
+}
+```
 
 ## User Story 5 Realizations
 
