@@ -366,9 +366,10 @@ Developing an Alexa Skill using the Amazon Skills API
 ### User Story 5 Activity Diagram
 goes here //NEEDS WORK
 
-# User Story Realization
+# User Story Realizations
 <br>
-## User Story 1 Realization
+
+## User Story 1 Realizations
 
 User Story 1 focuses on gaining a fundamental understanding of the Echo Dot and Alexa App's functionality.  We have found that almost all traffic coming in or out of the Dot or Alexa App is encrypted using TLS v1.2 <br><br>
 
@@ -467,7 +468,7 @@ PORT     STATE SERVICE VERSION
 
 ---
 
-## User Story 2 Realization
+## User Story 2 Realizations
 
 User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's default features and IoT capabilities. The Echo Dot registration process is also investigated. We have found that while most traffic coming in or out of the Alexa web panel is encrypted using TLS v1.2, the panel uses cookies and images which are not encrypted. <br><br>
 
@@ -548,7 +549,7 @@ PORT     STATE SERVICE    VERSION
 
 ---
 
-## User Story 3 Realization
+## User Story 3 Realizations
 User Story 3 focuses on gaining a fundamental understanding of the Alexa App's Skills functionality. We have found that while most traffic coming in or out of the Alexa App is encrypted using TLS v1.2, the Alexa App uses cookies and images which are not encrypted. <br><br>
 
 ---
@@ -588,7 +589,7 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 *Results*: No recgonized session cookies were captured by Cookie Cadger.
 
-## User Story 4 Realization
+## User Story 4 Realizations
 
 **Test:** Alexa Skills API Assessment
 
@@ -815,9 +816,7 @@ Amazon requires developers to provide testing instructions for the certification
 Developers are also required to answer a variety of questions concerning the behavior of their Alexa Skill and if the skill collects personal information:
 ![Privacy](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Privacy.png)
 
-//NEEDS WORK
-
-## User Story 5 Realization
+## User Story 5 Realizations
 
 **Test:** <a name="US5SPFlashTool"></a>Attempt to root the Echo Dot v2
 
@@ -945,7 +944,48 @@ A last attempt at finding MediaTek documentation led to a 9,975 page Chinese PDF
 
 In conclusion: until a correct scatter file for SoC MT8163 is obtained, this method of rooting is not possible.
 
-# Final Product
+# Assessment Activity Summary
+
+To assess the Echo Dot, we first developed five of the most common user stories for entities that interface with the Echo Dot.  User stories were used to determine what the Echo Dot does.  From these user stories, we assessed their standard procedures and developed acceptance criteria that need to be met to assure our user stories have no vulnerabilities.  To frame the threat landscape, we created a use/misuse case diagram to assess for potential vulnerabilities.  Additionally, an activity diagram was created for each user story to visualize the user’s actions as they complete a user story’s action.   These visual aids were all used to identify potential vulnerabilities in the Echo Dot’s functionality.  
+
+After identifying weak-spots, we set forward to gain more information about how the device operates.  From our obtained knowledge of the product, we deduced there were three architectural layers to the Echo Dot: hardware, firmware, and the Amazon backend.  Architectural diagrams were created for each layer to further footprint how each layer’s components interface with each other.   By knowing how the components are organized, we planned methods of exploitation.  When one component is compromised other sibling components may follow. All this planning led us to the exploitation phase of our penetration test.  
+
+From all our Echo Dot foot printing, we believed the device would be susceptible to network-based attacks.  Specifically, we were not confident in the Echo Dot’s protections from man-in-the-middle attacks.   All our user stories require network communications in some manner:
+* US1 - End users give requests to Alexa that are then transmitted to Amazon for processing.  
+* US2 - End users use the Echo Dot for wireless IoT administration of their home.
+* US3 - End users download new skills to their Echo Dot to add features.
+* US4 - Developers create new skills and upload them to Amazon’s servers.
+* US5 - Amazon pushes a firmware update to the Echo Dot.
+It was concluded that network-based exploitation would be one of our most likely avenues of exploitation. We obtained a Wi-Fi pineapple for network-based pentesting.
+
+Another avenue of exploitation was via Amazon’s Skill API.  We theorized that it could be possible to code malicious skills using the Alexa Skills Kit.  Vulnerable code or functions in the skills kit could be deployed in a malicious fashion to exploit an end user.
+
+Our final avenue of exploitation was to obtain root access to the Echo Dot to identify is full capabilities.  Preliminary research led us to believe this was not possible at the current time.  The bootloader is locked down and Amazon is not releasing its key.  However, the Echo Dot is can be flashed via MediaTek Android Smartphone Flashing Toolkits given the proper data.  We obtained the MediaTek tools for firmware based exploitation.
+
+# Findings Summary
+
+### Network Findings
+Almost all traffic to and from the Echo Dot v2 is encrypted using TLS v1.2.  A man-in-the-middle attack using SSLsplit failed to net any results.  We do not possess Amazon’s private-key and were unable to strip encryption.  We have evaluated that the Echo Dot v2 properly secures all network traffic from eavesdroppers. 
+(Network Results Diagram)
+
+![Network Findings Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Network%20Results%20Diagram.png)
+
+### Skills API Findings
+
+Needs work
+
+### Root Access Findings
+
+| Rooting Method | Working? | Reasoning? | Workaround? |
+|----------------|----------|------------|-------------|
+| Bootloader | No |Amazon has locked down the bootloader.  Fastboot getvar all shows unlock_status: false|None – wait until Amazon releases the unlock files|
+|MediaTek Smart Phone Flash Tools|No|Unable to acquire proper scatter file for flashing|Buy a product with the same MT8163 V/B System-on-Chip and rip its scatter file to apply to the Echo Dot.|
+
+The Echo Dot v2 has a bootloader that is locked down.  There is no access to common Android rooting tools like Android Debugging Bridge (adb). Until Amazon releases the unlock files for the bootloader another method must be used.   
+
+The Echo Dot v2 uses MediaTek hardware that includes a low-level USB preloader.  This preloader can be used with MediaTek Flashing Tools to flash different firmware. We attempted to use the MediaTek Smart Phone Flash Tools to rip the firmware to see what is going on inside, but failed because we did not have the proper scatter file.  Scatter files are partition specifications required for the flashing tools to execute. The Echo Dot requires a scatter file for the MT8163 V/B SoC.  
+
+# Final Report
 link here
 
 # Team Members
