@@ -1390,7 +1390,15 @@ Almost all traffic to and from the Echo Dot v2 is encrypted using TLS v1.2.  A m
 
 ### Skills API Findings
 
-Needs work
+Alexa Skill API Findings:
+
+The Alexa Skill API provides a limited set of permissions that Skills can access. The end user always receives a permission request via the Alexa App when they enable a developer's Alexa Skill. The following table summarizes the permissions.
+
+| Permission | Description | Exploitable? | Reason | 
+|------------|-------------|--------------|--------|
+| Device Address | Allows access to end user's full address, or country and postal code. | No | This permission can only expose the physical address if the end user provides that information.  |
+| List Read | Allows read access to end user's Alexa to-do and shopping lists. | No | This permission only allows read-only access to the shopping and to-do lists. |
+| List Write | Allows write access to end user's Alexa to-do and shopping lists. | No | This permission does not allow Skills to actually order anything, only to add/remove items from the shopping and to-do lists. |
 
 ### Root Access Findings
 
