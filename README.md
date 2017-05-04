@@ -819,7 +819,7 @@ Developers are also required to answer a variety of questions concerning the beh
 
 ## User Story 5 Realization
 
-**Test:** Attempt to root the Echo Dot v2
+**Test:** <a name="US5SPFlashTool"></a>Attempt to root the Echo Dot v2
 
 *Components Tested*: Subsystem Firmware Update
 
