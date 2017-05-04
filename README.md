@@ -1553,7 +1553,10 @@ The Echo Dot v2 uses MediaTek hardware that includes a low-level USB preloader. 
 
 # Final Report
 
+Download the PDF to have clickable links.
+
 [View Here](https://github.com/jhautry/echo-dot/blob/master/Amazon%20Echo%20Dot%20v2%20Penetration%20Testing%20Final%20Summary.pdf)
+
 [Download Link](https://github.com/jhautry/echo-dot/raw/master/Amazon%20Echo%20Dot%20v2%20Penetration%20Testing%20Final%20Summary.pdf)
 
 # Team Members
