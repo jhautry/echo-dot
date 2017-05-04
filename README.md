@@ -897,6 +897,75 @@ If a skill asks for address information for which the customer has not granted p
 | 429 Too Many Requests | The skill has been throttled due to an excessive number of requests. |
 | 500 Internal Error | An unexpected error occurred. |
 
+The `Lists Read` and `Lists Write` permissions allow skills to integrate with Alexa lists. Alexa customers currently have access to two built-in lists: Alexa to-do and Alexa shopping. Customers can review or modify their Alexa lists using voice through the Echo Dot or via the Alexa App. For example, a customer can tell Alexa to add items to the shopping list at home, and then while at the store, view the items via the Alexa app, and check them off.
+
+To access these list management capabilities, a skill requires a consent token specific to a customer to access that customer's Alexa lists. This token can be obtained with an in-session request, which is a customer voice request.
+
+After customer consent is obtained, each voice intent request will include the customer consent token. An in-sesssion intent request to the skill from Alexa includes a `user` object that contains a consent token. The developer needs to retrieve this token value and use it in requests related to list management. The form of the full request is shown below.
+
+```
+{
+  "version": "string",
+  "session": {
+    "new": true,
+    "sessionId": "string",
+    "application": {
+      "applicationId": "string"
+    },
+    "attributes": {
+      "string": {}
+    },
+    "user": {
+      "userId": "amzn1.ask.account.<userId_value>",
+         "permissions": {
+             "consentToken": "Atza|MQEWY...6fnLok"
+      },	
+      "accessToken": "string"
+    }
+  },
+  "context": {
+    "System": {
+      "application": {
+        "applicationId": "string"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.<userId_value>",
+           "permissions": {
+             "consentToken": "Atza|MQEWY...6fnLok"
+      },
+        "accessToken": "string"
+      },
+      "device": {
+        "deviceId": "string",	
+        "supportedInterfaces": {
+          "AudioPlayer": {}
+        }
+      },
+      "apiEndpoint": "string"
+    },
+    "AudioPlayer": {
+      "token": "string",
+      "offsetInMilliseconds": 0,
+      "playerActivity": "string"
+    }
+  },
+  "request": {}
+}
+```
+
+The list management capabilities provide create, read, update, and delete (CRUD) operations for the skill. This API exposes information about customer Alexa lists, and it supports list traversal. Each list item exposed through the API has properties such as value and itemId.
+
+**List Management Domain:** https://api.amazonalexa.com/
+
+| API | Method | URI Endpoint |
+|-----|--------|--------------|
+| Get lists metadata | GET | v2/householdlists/ |
+| Get a list | GET | v2/householdlists/{listId}/{status} |
+| Get a list item | GET | v2/householdlists/{listId}/items/{itemId} |
+| Update a list item | PUT | v2/householdlists/{listId}/items/{itemId} |
+| Create a new list item | POST | v2/householdlists/{listId}/items |
+| Delete a list item | DELETE | v2/householdlists/{listId}/items/{itemId} |
+
 ## User Story 5 Realizations
 
 **Test:** <a name="US5SPFlashTool"></a>Attempt to root the Echo Dot v2
