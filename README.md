@@ -87,7 +87,7 @@ Acceptance Criteria:
 
 ---
 
-### 2) As an *end user*, I want to *be confident that my Echo Dot is secure* so I can *trust it to administer the security of my home* and *maintain confidentiality of my personal information*.
+### 2) As an *end user*, I want to *be confident that my Echo Dot is secure from the initial setup* so I can *trust it to administer the security of my home* and *maintain confidentiality of my personal information*.
 
 Acceptance Criteria:
 * Pentest the default Echo Dot features for vulnerabilities.
