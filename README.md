@@ -841,8 +841,6 @@ After consent is obtained, a launch request from Alexa to the developer's Skill 
 
 The device address permission has two options:
 * Get Country and Postal Code - Gets the country and postal code associated with a device specified by deviceId.
-
-Example Request:
 ```
 Host: api.amazonalexa.com
 Accept: application/json
@@ -860,8 +858,6 @@ Content-Type: application/json
 }
 ```
 * Get Address - Gets the full address associated with the device specified by deviceId.
-
-Example Request:
 ```
 Host: api.amazonalexa.com
 Accept: application/json
@@ -1397,10 +1393,12 @@ The Alexa Skill API provides a limited set of permissions that Skills can access
 | Permission | Description | Exploitable? | Reason | 
 |------------|-------------|--------------|--------|
 | Device Address | Allows access to end user's full address, or country and postal code. | No | This permission can only expose the physical address if the end user provides that information. The end user can also restrict the address information to only the country and postal code.  |
-| List Read | Allows read access to Alexa to-do and shopping lists. | No | This permission only allows read-only access to the shopping and to-do lists. |
-| List Write | Allows write access to Alexa to-do and shopping lists. | No | This permission does not allow Skills to actually order anything, only to add/remove items from the shopping and to-do lists. |
+| List Read | Allows read-only access to the Alexa to-do and shopping lists. | No | This permission only allows read-only access to the shopping and to-do lists. |
+| List Write | Allows read-write access to the Alexa to-do and shopping lists. | No | This permission does not allow Skills to actually order anything, only to add/remove items from the shopping and to-do lists. |
 
-All Alexa Skills must also pass the Amazon Skill Certification requirements in order to be published and made available for end users to enable. These requirements include answering questions about the behavior of the Skill and providing testing instructions for the certification team. Since all Alexa Skills are tested by the Amazon certification team before being put into production, and given the limited permissions that Alexa Skills have access to, it is unlikely that a developer could create an Alexa Skill with malicious intent.
+All Alexa Skills must also pass the Amazon Skill Certification requirements in order to be published and made available for end users to enable. These requirements include answering questions about the behavior of the Skill and providing testing instructions for the certification team.
+
+Since all Alexa Skills are tested by the Amazon certification team before being put into production, and given the limited permissions that Alexa Skills have access to, it is unlikely that a developer could create an Alexa Skill with malicious intent.
 
 ### Root Access Findings
 
