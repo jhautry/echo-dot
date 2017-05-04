@@ -451,6 +451,7 @@ See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/p
 *Conducted*: nmap was used to find open ports when apps are running
 
 *Results*: A port scan of the Echo Dot using ```nmap -p 1-65535 -T4 -A -v -Pn 172.16.42.213``` shows TCP port ```4070``` as open and accepting connections:
+
 ```
 Scanning 172.16.42.213 [65535 ports]
 Discovered open port 4070/tcp on 172.16.42.213
@@ -490,6 +491,18 @@ PORT     STATE SERVICE VERSION
 |     Error 500: Server Error
 |_    Client closed connection
 ```
+
+---
+
+**Test: <a name="US1Bluetooth"></a>Alexa Remote Bluetooth analysis**
+
+*Components Tested*: Hardware Wireless Transmission Interface & Firmware SendRequest
+
+*Purpose*: To determine if the Bluetooth protcols can be exploited to send third-party requests
+
+*Conducted*: Used btscanner in Kali Linux to detect bluetooth devices in the area surrounding a laptop with bluetooth enabled, with the intent to use spooftooph in Kali to clone and impersonate the remote.
+
+*Results*: btscanner did not detect the bluetooth signal between the remote and the echo dot.  Results inconclusive for the present.
 
 ---
 
@@ -1396,7 +1409,8 @@ From all our Echo Dot foot printing, we believed the device would be susceptible
 * US3 - End users download new skills to their Echo Dot to add features.
 * US4 - Developers create new skills and upload them to Amazon’s servers.
 * US5 - Amazon pushes a firmware update to the Echo Dot.
-It was concluded that network-based exploitation would be one of our most likely avenues of exploitation. We obtained a Wi-Fi pineapple for network-based pentesting.
+
+It was concluded that network-based exploitation would be one of our most likely avenues of exploitation. We obtained a Wi-Fi pineapple for network-based pentesting.  On a similar train of thought, we also decided as part of our wireless exploitation to pentest the Echo Dot's interactions with the Alexa Voice Remote, a device which connects to the Echo Dot via Bluetooth.
 
 Another avenue of exploitation was via Amazon’s Skill API.  We theorized that it could be possible to code malicious skills using the Alexa Skills Kit.  Vulnerable code or functions in the skills kit could be deployed in a malicious fashion to exploit an end user.
 
@@ -1405,9 +1419,12 @@ Our final avenue of exploitation was to obtain root access to the Echo Dot to id
 # Findings Summary
 
 ### Network Findings
+
 Almost all traffic to and from the Echo Dot v2 is encrypted using TLS v1.2.  A man-in-the-middle attack using SSLsplit failed to net any results.  We do not possess Amazon’s private-key and were unable to strip encryption.  We have evaluated that the Echo Dot v2 properly secures all network traffic from eavesdroppers. 
 
 ![Network Findings Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Network%20Results%20Diagram.png)
+
+As another part of our exploration into wireless vulnerabilities, we also attempted to intercept and spoof the Bluetooth signal from an Alexa Voice Remote.  However, we ran into technical issues in the interception phase and had very limited ability to intercept the remote's signal.  As such, testing on this front has remained inconclusive for the present.
 
 ### Skills API Findings
 
