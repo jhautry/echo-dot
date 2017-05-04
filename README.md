@@ -1414,7 +1414,7 @@ It was concluded that network-based exploitation would be one of our most likely
 
 Another avenue of exploitation was via Amazon’s Skill API.  We theorized that it could be possible to code malicious skills using the Alexa Skills Kit.  Vulnerable code or functions in the skills kit could be deployed in a malicious fashion to exploit an end user.
 
-Our final avenue of exploitation was to obtain root access to the Echo Dot to identify is full capabilities.  Preliminary research led us to believe this was not possible at the current time.  The bootloader is locked down and Amazon is not releasing its key.  However, the Echo Dot is can be flashed via MediaTek Android Smartphone Flashing Toolkits given the proper data.  We obtained the MediaTek tools for firmware based exploitation.
+Our final avenue of exploitation was to obtain root access to the Echo Dot to identify is full capabilities.  Preliminary research led us to believe this was not possible at the current time.  The bootloader is locked down and Amazon is not releasing its unlock files.  However, the Echo Dot is can be flashed via MediaTek Android Smartphone Flashing Toolkits given the proper data.  We obtained the MediaTek tools for firmware based exploitation.
 
 # Findings Summary
 
