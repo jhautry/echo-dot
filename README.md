@@ -17,7 +17,7 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
   * Develop secure usage practices by finding the threshold decibel levels required to converse with Alexa
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
-### Table of contents
+# Table of Contents
 * [Proposed Project Timeline](#proposed-project-timeline)
   * [Gantt Chart](#gantt-chart)
   * [Tabular Project Timeline](#tabular-project-timeline)
@@ -1297,7 +1297,7 @@ Other versions of SPFT and the MT VCOM drivers failed to produce any quality res
 
 This is because when the Echo Dot v2 is connected to PC via USB, the MediaTek Preloader is only recognized for less than two seconds before Alexa enters setup mode.  Halting or stalling setup mode was not possible using any button combination.  Only the above software and driver combination was able to automatically halt the Echo Dot startup process.
 
-Inside the SPFT software, a scatter file must be selected that aligns with the SoC contained within the hardware you wish to root.  A scatter file is a partition table that is used during the rooting process.  It can be created from *rooted devices* by using third-party tools, or by copying ```/proc/mtd``` to obtain block sizes for the partitions.  In an attempt to get the software working, a few alternative scatter files were used as test runs.  Here is the example scatter file for MediaTek SoC MT6575 that was used during testing:
+Inside the SPFT software, a scatter file must be selected that aligns with the SoC contained within the hardware you wish to root.  A scatter file is similar to a partition table.  It can be created from *rooted devices* by using third-party tools, or by copying ```/proc/mtd``` to obtain block sizes for the partitions.  In an attempt to get the software working, a few alternative scatter files were used as test runs.  Here is the example scatter file for MediaTek SoC MT6575 that was used during testing:
 ```
 PRELOADER 0x0
 {
@@ -1345,6 +1345,418 @@ __NODL_BMTPOOL 0xFFFF0050
 {
 }
 ```
+
+MT6753 Scatter File
+
+````
+############################################################################################################
+#
+#  General Setting 
+#    
+############################################################################################################
+- general: MTK_PLATFORM_CFG
+  info: 
+    - config_version: V1.1.2
+      platform: MT6753
+      project: bd6753_65c_a_l1
+      storage: EMMC
+      boot_channel: MSDC_0
+      block_size: 0x20000
+############################################################################################################
+#
+#  Layout Setting
+#
+############################################################################################################
+- partition_index: SYS0
+  partition_name: preloader
+  file_name: preloader_bd6753_65c_a_l1.bin
+  is_download: true
+  type: SV5_BL_BIN
+  linear_start_addr: 0x0
+  physical_start_addr: 0x0
+  partition_size: 0x40000
+  region: EMMC_BOOT_1
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: BOOTLOADERS
+  reserve: 0x00
+
+- partition_index: SYS1
+  partition_name: pgpt
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x0
+  physical_start_addr: 0x0
+  partition_size: 0x80000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS2
+  partition_name: proinfo
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x80000
+  physical_start_addr: 0x80000
+  partition_size: 0x300000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: PROTECTED
+  reserve: 0x00
+
+- partition_index: SYS3
+  partition_name: nvram
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x380000
+  physical_start_addr: 0x380000
+  partition_size: 0x500000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: BINREGION
+  reserve: 0x00
+
+- partition_index: SYS4
+  partition_name: protect1
+  file_name: NONE
+  is_download: false
+  type: EXT4_IMG
+  linear_start_addr: 0x880000
+  physical_start_addr: 0x880000
+  partition_size: 0xa00000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: PROTECTED
+  reserve: 0x00
+
+- partition_index: SYS5
+  partition_name: protect2
+  file_name: NONE
+  is_download: false
+  type: EXT4_IMG
+  linear_start_addr: 0x1280000
+  physical_start_addr: 0x1280000
+  partition_size: 0xa00000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: PROTECTED
+  reserve: 0x00
+
+- partition_index: SYS6
+  partition_name: lk
+  file_name: lk.bin
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x1c80000
+  physical_start_addr: 0x1c80000
+  partition_size: 0x80000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS7
+  partition_name: para
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x1d00000
+  physical_start_addr: 0x1d00000
+  partition_size: 0x80000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS8
+  partition_name: boot
+  file_name: boot.img
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x1d80000
+  physical_start_addr: 0x1d80000
+  partition_size: 0x1000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS9
+  partition_name: recovery
+  file_name: recovery.img
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x2d80000
+  physical_start_addr: 0x2d80000
+  partition_size: 0x1000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS10
+  partition_name: logo
+  file_name: logo.bin
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x3d80000
+  physical_start_addr: 0x3d80000
+  partition_size: 0x800000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS11
+  partition_name: expdb
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x4580000
+  physical_start_addr: 0x4580000
+  partition_size: 0xa00000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS12
+  partition_name: seccfg
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x4f80000
+  physical_start_addr: 0x4f80000
+  partition_size: 0x80000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS13
+  partition_name: oemkeystore
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x5000000
+  physical_start_addr: 0x5000000
+  partition_size: 0x200000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS14
+  partition_name: secro
+  file_name: secro.img
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x5200000
+  physical_start_addr: 0x5200000
+  partition_size: 0x600000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS15
+  partition_name: keystore
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x5800000
+  physical_start_addr: 0x5800000
+  partition_size: 0x800000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS16
+  partition_name: tee1
+  file_name: trustzone.bin
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x6000000
+  physical_start_addr: 0x6000000
+  partition_size: 0x500000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS17
+  partition_name: tee2
+  file_name: trustzone.bin
+  is_download: true
+  type: NORMAL_ROM
+  linear_start_addr: 0x6500000
+  physical_start_addr: 0x6500000
+  partition_size: 0x500000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS18
+  partition_name: frp
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x6a00000
+  physical_start_addr: 0x6a00000
+  partition_size: 0x100000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS19
+  partition_name: nvdata
+  file_name: NONE
+  is_download: false
+  type: EXT4_IMG
+  linear_start_addr: 0x6b00000
+  physical_start_addr: 0x6b00000
+  partition_size: 0x2000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS20
+  partition_name: metadata
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0x8b00000
+  physical_start_addr: 0x8b00000
+  partition_size: 0x2500000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: INVISIBLE
+  reserve: 0x00
+
+- partition_index: SYS21
+  partition_name: system
+  file_name: system.img
+  is_download: true
+  type: EXT4_IMG
+  linear_start_addr: 0xb000000
+  physical_start_addr: 0xb000000
+  partition_size: 0x60000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS22
+  partition_name: cache
+  file_name: cache.img
+  is_download: true
+  type: EXT4_IMG
+  linear_start_addr: 0x6b000000
+  physical_start_addr: 0x6b000000
+  partition_size: 0x19000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS23
+  partition_name: userdata
+  file_name: userdata.img
+  is_download: true
+  type: EXT4_IMG
+  linear_start_addr: 0x84000000
+  physical_start_addr: 0x84000000
+  partition_size: 0x60000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: true
+  is_reserved: false
+  operation_type: UPDATE
+  reserve: 0x00
+
+- partition_index: SYS24
+  partition_name: flashinfo
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0xFFFF0084
+  physical_start_addr: 0xFFFF0084
+  partition_size: 0x1000000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: false
+  is_reserved: true
+  operation_type: RESERVED
+  reserve: 0x00
+
+- partition_index: SYS25
+  partition_name: sgpt
+  file_name: NONE
+  is_download: false
+  type: NORMAL_ROM
+  linear_start_addr: 0xFFFF0004
+  physical_start_addr: 0xFFFF0004
+  partition_size: 0x80000
+  region: EMMC_USER
+  storage: HW_STORAGE_EMMC
+  boundary_check: false
+  is_reserved: true
+  operation_type: RESERVED
+  reserve: 0x00
+```
 Using the "Readback" function of SPFT, we attempted to rip the software from the Echo Dot.  However, we could not advance because using the MT6575 scatter file caused a "Chip type not match!" error.  The software actually stopped Alexa from booting up into setup mode.  If we had the correct scatter file, we would be on our way to rooting.  This is further than ダニエル has progressed during his exploration.
 
 ![Chip Type Not Match](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Chip%20Type%20not%20Match.jpg)
@@ -1385,7 +1797,7 @@ This scatter file is in a different format than the previous scatter files.  It 
 
 ![Bad Scatter File](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Bad%20Scatter%20File.jpg)
 
-We attempted to format ```scatter.txt``` into the correct format, but had no success.  Placing braces after each partition did not solve the problem.  We believe this ```scatter.txt``` to be used for update purposes only and, therefore, not useful for a fresh Android OS install.
+We attempted to format ```scatter.txt``` into the correct format, but had no success.  Placing braces after each partition did not solve the problem. The format is likely to be similar to the MT6753 scatter file above. We believe this ```scatter.txt``` to be used for update purposes only and, therefore, not useful for ripping the firmware.
 
 ![Scatter File Crash](https://github.com/jhautry/echo-dot/blob/master/images/Scatter%20Error.jpg)
 
