@@ -605,7 +605,7 @@ The following diagram shows the outline of the Alex Skill invocation process:
 
 Amazon has created an Alexa App module to make it easier for developers to get starting coding their own Alexa Skills. This module can be found at: https://github.com/alexa-js/alexa-app
 
-The alexa-app module parses HTTP JSON requests from the Alexa platform and builds the JSON response that consumed by an Alexa-compatible device, such as the Echo.
+The alexa-app module parses HTTP JSON requests from the Alexa platform and builds the JSON response that is consumed by an Alexa-compatible device, such as the Echo.
 
 This example shows how the alexa-app module can be used to build an Alexa Skill:
 
@@ -885,6 +885,17 @@ Content-Type: application/json
   "districtOrCounty" : ""
 }
 ```
+
+If a skill asks for address information for which the customer has not granted permissions, then the skill will receive an error. If the customer does not grant permission, the skill can provide a graceful fallback message and end the session. The table below represents possible responses to a request for address information.
+
+| Response | Description |
+|----------|-------------|
+| 200 OK | Successfully got the address associated with this deviceId. |
+| 204 No Content | The query did not return any results. |
+| 403 Forbidden | The authentication token is invalid or doesn't have access to the resource. |
+| 405 Method Not Allowed | The method is not supported. |
+| 429 Too Many Requests | The skill has been throttled due to an excessive number of requests. |
+| 500 Internal Error | An unexpected error occurred. |
 
 ## User Story 5 Realizations
 
