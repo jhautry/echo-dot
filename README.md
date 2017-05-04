@@ -1233,6 +1233,7 @@ HTTP 500 Internal Server Error, if Alexa encountered a server error
     "type": "InternalError"
 }
 ```
+In conclusion: Amazon only allows a limited number of permissions for use by Alexa Skills. Requests for these permissions will always prompt the customer to allow these permissions. Any Alexa Skill attempting to bypass this requirement receives a "request is unauthorized" response from the Alexa Skills API. This shows that the Alexa Skills API does not allow potentially malicious Skills to access information about the device or the customer directly.
 
 ## User Story 5 Realizations
 
