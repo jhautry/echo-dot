@@ -966,7 +966,6 @@ Our final avenue of exploitation was to obtain root access to the Echo Dot to id
 
 ### Network Findings
 Almost all traffic to and from the Echo Dot v2 is encrypted using TLS v1.2.  A man-in-the-middle attack using SSLsplit failed to net any results.  We do not possess Amazon’s private-key and were unable to strip encryption.  We have evaluated that the Echo Dot v2 properly secures all network traffic from eavesdroppers. 
-(Network Results Diagram)
 
 ![Network Findings Diagram](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Network%20Results%20Diagram.png)
 
