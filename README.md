@@ -17,6 +17,30 @@ Voice-controlled AI devices such as the Echo Dot are a newly emerging technology
   * Develop secure usage practices by finding the threshold decibel levels required to converse with Alexa
 * Provide a technical writeup concerning the results of our investigation into the Echo Dot, both for the benefit of Amazon so that they may patch any vulnerabilities we find, and for the rest of the security community, so that they may build off our work
 
+### Table of contents
+* [Proposed Project Timeline](#proposed-project-timeline)
+  * [Gantt Chart](#gantt-chart)
+  * [Tabular Project Timeline](#tabular-project-timeline)
+* [Project-oriented Risk List](#project-oriented-risk-list)
+* [User Stories](#user-stories)
+* [Use/Misuse Case Diagram](#usemisuse-case-diagram)
+* [Resources/Technology Needed](#resourcestechnology-needed)
+* [Architectural Diagrams](#architectural-diagrams)
+  * [Hardware Diagram](#hardware-diagram)
+  * [Firmware Diagram](#firmware-diagram)
+  * [Amazon Backend Diagram](#amazon-backend-diagram)
+  * [Activity Diagrams](#activity-diagrams)
+* [User Story Realizations](#user-story-realizations)
+  * [User Story 1 Realizations](#user-story-1-realizations)
+  * [User Story 2 Realizations](#user-story-2-realizations)
+  * [User Story 3 Realizations](#user-story-3-realizations)
+  * [User Story 4 Realizations](#user-story-4-realizations)
+  * [User Story 5 Realizations](#user-story-5-realizations)
+* [Assessment Activity Summary](#assessment-activity-summary)
+* [Findings Summary](#findings-summary)
+* [Final Report](#final-report)
+* [Team Members](#team-members)
+
 # Proposed Project Timeline
 Timeline last updated: 3/9/2017
 
