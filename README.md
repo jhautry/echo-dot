@@ -590,7 +590,6 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 *Results*: No recgonized session cookies were captured by Cookie Cadger.
 
 ## User Story 4 Realizations
-
 **Test:** Alexa Skills API Assessment
 
 *Components Tested*: Subsystem Amazon Alexa Database
@@ -601,11 +600,14 @@ Images from ```http://ecx.images-amazon.com``` are also transmitted by the Alexa
 
 *Preface*: Amazon provides an AWS Lambda service for deploying Alexa Skills in the cloud. AWS Lambda is typically hosted on an Amazon Machine Image (AMI) running on Amazon's EC2 cloud platform. Developers of custom Alexa Skills also have the option to use their own cloud infrastructure to deploy the skill.
 
+The following diagram shows the outline of the Alex Skill invocation process:
+![ASK](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/ASK.png)
+
 Amazon has created an Alexa App module to make it easier for developers to get starting coding their own Alexa Skills. This module can be found at: https://github.com/alexa-js/alexa-app
 
 The alexa-app module parses HTTP JSON requests from the Alexa platform and builds the JSON response that consumed by an Alexa-compatible device, such as the Echo.
 
-This examples shows how the alexa-app module can be used to build an Alexa Skill:
+This example shows how the alexa-app module can be used to build an Alexa Skill:
 
 ```
 var alexa = require("alexa-app");
@@ -815,6 +817,33 @@ Amazon requires developers to provide testing instructions for the certification
 
 Developers are also required to answer a variety of questions concerning the behavior of their Alexa Skill and if the skill collects personal information:
 ![Privacy](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/Privacy.png)
+
+
+Alexa Skills currently have access to a limited number of permissions: Device Address, List Read, and List Write. These permissions are configured in the Amazon Developer Portal. Once configured, the customer is prompted with a permissions card in the Alexa app to consent to provide the information requested when they enable the skill.
+![Permissions](https://raw.githubusercontent.com/jhautry/echo-dot/master/images/permissions.png)
+
+After consent is obtained, a launch request from Alexa to the developer's Skill includes a user object that contains a consent token and device ID.
+
+```
+{
+  "user": {
+    "userId": "amzn1.ask.account.<userId_value>",
+    "permissions": {
+      "consentToken": "Atza|MQEWY...6fnLok"
+    }
+  },
+  "device": {
+    "deviceId": <device_id>,
+    "supportedInterfaces": {}
+  }
+}
+```
+
+The device address permission has two options:
+* Get Country and Postal Code - Gets the country and postal code associated with a device specified by deviceId.
+* Get Address - Gets the full address associated with the device specified by deviceId.
+
+
 
 ## User Story 5 Realizations
 
