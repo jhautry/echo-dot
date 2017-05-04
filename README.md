@@ -374,7 +374,7 @@ User Story 1 focuses on gaining a fundamental understanding of the Echo Dot and 
 
 ---
 
-**Test: Echo Dot network analysis**
+**Test: <a name="US1NetworkAnalysis"></a>Echo Dot network analysis**
 
 *Components Tested*: Firmware SendRequest and ResponseProcessing
 
