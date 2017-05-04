@@ -1386,8 +1386,6 @@ Almost all traffic to and from the Echo Dot v2 is encrypted using TLS v1.2.  A m
 
 ### Skills API Findings
 
-Alexa Skill API Findings:
-
 The Alexa Skill API provides a limited set of permissions that Skills can access. The end user always receives a permission request via the Alexa App when they enable a developer's Alexa Skill. The following table summarizes the permissions.
 
 | Permission | Description | Exploitable? | Reason | 
