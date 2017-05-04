@@ -374,7 +374,7 @@ User Story 1 focuses on gaining a fundamental understanding of the Echo Dot and 
 
 ---
 
-**Test: <a name="US1NetworkAnalysis"></a>Echo Dot network analysis**
+**Test: <a name="US1EchoDotNetworkAnalysis"></a>Echo Dot network analysis**
 
 *Components Tested*: Firmware SendRequest and ResponseProcessing
 
@@ -388,7 +388,7 @@ See: [echodot-normal.pcapng](https://github.com/jhautry/echo-dot/blob/master/pac
 
 ---
 
-**Test: Alexa App network analysis**
+**Test: <a name="US1AlexaAppAnalysis"></a>Alexa App network analysis**
 
 *Component Tested*: Backend ExecuteRequest & AppPanel
 
@@ -402,7 +402,7 @@ See: [alexa-app.pcapng](https://github.com/jhautry/echo-dot/blob/master/packet-c
 
 ---
 
-**Test: Echo Dot man-in-the-middle attack**
+**Test: <a name="US1MITM"></a>Echo Dot man-in-the-middle attack**
 
 *Components Tested*: Firmware SendRequest
 
@@ -416,7 +416,7 @@ See: [echodot-sslsplit.pcapng](https://github.com/jhautry/echo-dot/blob/master/p
 
 ---
 
-**Test: Default Alexa Apps network analysis**
+**Test: <a name="US1DefaultApps"></a>Default Alexa Apps network analysis**
 
 *Components Tested*: Firmware SendRequest
 
@@ -471,7 +471,7 @@ PORT     STATE SERVICE VERSION
 
 User Story 2 focuses on gaining a fundamental understanding of the Echo Dot's default features and IoT capabilities. The Echo Dot registration process is also investigated. We have found that while most traffic coming in or out of the Alexa web panel is encrypted using TLS v1.2, the panel uses cookies and images which are not encrypted. <br><br>
 
-**Test: Echo Dot Registration network analysis**
+**Test: <a name="US2Registration"></a>Echo Dot Registration network analysis**
 
 *Components Tested*: Backend WebPanel
 
@@ -491,7 +491,7 @@ The following connections from the Echo Dot were observed during registration:
 | 172.16.42.213 | http://apresolve.spotify.com/?client=2:5:0:71778395393884299 |
 
 ---
-**Test: Echo Dot Setup Mode network analysis**
+**Test: <a name="US2SetupMode"></a>Echo Dot Setup Mode network analysis**
 
 *Components Tested*: Firmware SendRequest
 
